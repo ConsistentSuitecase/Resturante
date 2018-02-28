@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <Title>Parties</Title>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src = "js/bootstrap.js"></script>
+  <script src = "main.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header clearfix">
+      <nav>
+        <ul class="nav nav-pills pull-right">
+          <li role="presentation"><a href="index.html">Check In</a></li>
+          <li role="presentation" class="active"><a href="waiter.html">Waiter Page</a></li>
+        </ul>
+      </nav>
+      <h3 class="text-muted">Waiter Menu</h3>
+    </div>
+
+    <div class="jumbotron">
+      <div class="container">
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="w_ID">Waiter ID:</label>
+          <div class="col-sm-6">
+            <input type="number" class="form-control" id="w_ID" placeholder="Enter Waiter ID">
+          </div>
+          <div class="col-sm-4">
+            <p><a class="btn btn-xs btn-primary btn-search-by-ID" href="javascript:void(0);" role="button">Get Parties</a></p>
+          </div>
+        </div>
+        <div class="form-group">
+
+          <div class="col-sm-12">
+            <p><a class="btn btn-xs btn-primary btn_getAll" href="javascript:void(0);" role="button">Get all Parties</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row marketing">
+      <div class="col-lg-12">
+        <h2 class="page-header">Parties </h2>
+        <div id="parties"></div>
+      </div>
+    </div>
+
+
+    <footer class="footer">
+      <p>&copy; AD 2018 Strategic Gravity</p>
+    </footer>
+
+  </div> <!-- /container -->
+
+</body>
+</html>
