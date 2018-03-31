@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	
+background-color: rgb(236 225 201);
+	background-image: url(logo.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+}
+
+div{
+	text-align: center;
+	
+}
+
+h1{
+	font-size: 200px;
+	line-height: 0px;
+}
+
+h2{
+	font-size: 25px;
+}
