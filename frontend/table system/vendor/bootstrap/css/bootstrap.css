@@ -60,7 +60,6 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  background: url('https://www.google.com/images/srpr/logo3w.png');
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1rem;
   font-weight: 400;
@@ -4425,18 +4424,7 @@ tbody.collapse.show {
 .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
   color: #fff;
 }
-<<<<<<< HEAD
-.box{
-  width:100px;
-  height:100px;
-  background-color: #fff;
-}
-.blue{
-  background:#00f;
-}
-=======
 
->>>>>>> 891ef2812a2dba5901f421c5ccbb3e7d8b7687bf
 .card {
   position: relative;
   display: -webkit-box;
@@ -4448,11 +4436,7 @@ tbody.collapse.show {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-<<<<<<< HEAD
-  background-color: blue;
-=======
   background-color: #fff;
->>>>>>> 891ef2812a2dba5901f421c5ccbb3e7d8b7687bf
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
