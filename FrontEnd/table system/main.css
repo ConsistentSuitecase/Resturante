@@ -1,0 +1,446 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	margin: 0;
+	background-color: #ECE1C9;
+	background-size: cover;
+}
+
+.bottomNavBar{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 11%
+}
+
+.links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #075183;	
+}
+
+.bottomNavBar li {
+    float: left;
+	width: 15%;	
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;	
+}
+
+.tnum{
+	float: right;
+	display: block;
+    color: white;
+    text-align: center;
+	padding: 14px 14px;
+    text-decoration: none;
+	width: 10%;
+	font-size: 14px;
+	
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #2399B4
+}
+
+.helpBar{
+	float: right;
+	postion: fixed;
+	top: 0;
+	list-style-type: none;
+    margin-top: 0;
+	margin-right: 10%;
+    padding-bottom: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+    background-color: rgb(0,0,0,.3);
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+	display: inline-block;
+}
+
+.button {
+    background-color: whitesmoke; /* Green */
+    border: 1px solid gray;
+    color: red;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+    cursor: pointer;
+	border-bottom-right-radius: 12px;
+	border-bottom-left-radius: 12px;
+	float:left;
+	font-size: 12px;
+	word-wrap: normal;
+	opacity: 1;
+}
+.cartbutton{
+	color: red;
+}
+
+.maincontent{
+background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto;   
+	position: fixed;
+    height: 89%;
+	width: 100%;
+	z-index: -1;
+	margin: 0;
+	padding: 0;
+}
+
+.carousel-caption{
+	position: fixed;
+	background: rgb(199, 231, 238, .8);
+	bottom: 0;
+	margin: 0;
+	left: 0;
+	right: 0;
+	height: 25%;
+	padding: 0;
+}
+.drink-list{
+	position: fixed;
+	
+	right: 0;
+	margin: 0;
+	width: 60%;
+	height: 100%;
+	padding-top: 60px;
+}
+.teaphoto{
+	position: fixed;
+	padding: 0;
+	left: 0;
+	margin: 0;
+	width: 40%;
+	height: 100%;
+	
+}
+
+
+	
+	
+	
+
+h3{
+	color: black;
+	align-content: center;
+}
+
+.menuitem {
+	color: black;
+	text-align: left;
+	margin: 0;
+	width: 50%;
+}
+
+p{
+	color: black;
+	text-align: left;
+	padding: 0;
+	margin: 0;
+}
+
+.orderbutton{
+	background-color: #F79368;
+	float: right;
+	margin: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+	padding: 4px 5px;
+	color:white;
+	text-size: 12px;
+	margin-right: 5px;
+	margin-top: 2px;
+	border-radius: 10px;
+}
+
+.price{
+	margin: 0;
+	padding: 0;
+	float: right;
+	margin-right: 10px;
+	color: black;
+}
+
+.carousel-control-next{
+	height: 75%;	
+}
+
+.carousel-control-prev{
+	height: 75%;	
+}
+
+/* Style the tab */
+.tabbar {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 11%;
+    overflow: hidden;
+  	padding: 0;
+    background-color: #075183;
+	margin: 0;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tabbar button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+	color:white;
+	text-size: 14px;
+	width: 15%;
+}
+
+.tabbar a{
+ background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+	color:white;
+	text-size: 14px;
+	width: 15%;
+	text-align: center;
+}
+
+/* Change background color of buttons on hover */
+.tabbar button:hover {
+    background-color: #2399B4;
+}
+
+/* Create an active/current tablink class */
+.tabbar button.active {
+    background-color: #2399B4;
+}
+
+/* Style the tab content */
+.tabcontent {
+	
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    display: none;    
+	position: fixed;
+    height: 89%;
+	width: 100%;
+	z-index: -1;
+	background-color: aliceblue;
+}
+
+
+.carousel-item {
+  
+  min-height: 405px;
+  background: no-repeat center;
+ 	background-size: cover;
+	margin: 0;
+	padding: 0;
+}
+
+.orderBar{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 11%;
+    overflow: hidden;
+  	padding: 0;
+	margin: 0;
+	
+}
+.orderBar button {
+    background-color: #FAB160;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 5px;
+    transition: 0.3s;
+	color: black;
+	text-size: 14px;
+	width: 20%;
+	margin-left: 20px;
+	margin-top: 10px;
+	border-top-right-radius: 12px;
+	border-top-left-radius: 12px;
+}
+.orderBar button:hover {
+    background-color: #2399B4;
+}
+
+/* Create an active/current tablink class */
+.orderBar button.active {
+    background-color: white;
+}
+.ordercontent{    
+	position: fixed;
+	margin-top: 43px;
+    height: 70%;
+	width: 770px;
+	margin-left: 20px;
+	background-color: white;
+}
+.order{
+	padding: 50px;
+}
+.sent{
+	padding: 50px;
+}
+.add-placeOrder{
+	position: absolute;
+    bottom: 0;
+    right: 0;
+	float: right;
+	margin-bottom: 45px;
+    margin-top: 0;
+	margin-right: 10%;
+    padding-bottom: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+	display: inline-block;
+	
+}
+
+.placebutton{
+	background-color: #F79368;
+	border: none;
+	margin: 0;
+   	cursor: pointer;
+	padding: 4px 5px;
+	color:white;
+	text-size: 12px;
+	margin-right: 5px;
+	margin-top: 2px;
+	border-radius: 10px;
+}
+
+.drinkbackground{
+	min-height: 405px;
+  	background-color: #ECE1C9;
+	margin: 0;
+	padding: 0;
+}
+.fuckingworkpls{
+	list-style-type: none;
+	font-size: 20px;
+}
+.alldrinks{
+	padding: 5px;
+}
+.submit{
+	
+}
+
+
+.payBar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 11%;
+    overflow: hidden;
+  	padding: 0;
+    background-color: #075183;
+	margin: 0;
+	
+}
+
+/* Style the buttons that are used to open the tab content */
+.payBar button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+	color:white;
+	text-size: 14px;
+	width: 15%;
+}
+
+.payBar a{
+ background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+	color:white;
+	text-size: 14px;
+	width: 15%;
+	text-align: center;
+}
+
+/* Change background color of buttons on hover */
+.payBar button:hover {
+    background-color: #2399B4;
+}
+
+/* Create an active/current tablink class */
+.payBar button.active {
+    background-color: #2399B4;
+}
+
+/* Style the tab content */
+
+.paymentContent{
+	background-color: #ECE1C9;
+	position: fixed;
+	height: 90%;
+	width: 100%;
+	bottom: 0;
+	
+}
+
+.checkDetail{
+	background-color: white;
+	width: 45%;
+	height: 80%;
+	margin: 20px 5px;
+	position: fixed;
+	
+}
+
+.full{
+	background-color: white;
+	width: 45%;
+	height: 30%;
+	margin: 20px 5px;
+	position: fixed;
+	right: 0;
+}
+.split{
+	background-color: white;
+	width: 45%;
+	height: 30%;
+	margin: 20px 5px;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+}

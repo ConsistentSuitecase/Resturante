@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Pay</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>	
+	</head>
+
+	<body>
+		<div class="payBar">
+	 		<a href="main.html">EXIT</a>
+	 		<button class="tablinks" onclick="openMenu(event, 'splitcheck')" id="split">Splite Check</button>
+	 		<button class="tablinks" onclick="openMenu(event, 'appitizers')">Pay</button>
+	 		<button class="tablinks" onclick="openMenu(event, 'entree')">Add Tip</button>
+			<button class="tablinks" onclick="openMenu(event, 'desserts')">Receipt</button>
+			<button class="button">Call Server</button>
+		</div>
+	
+		<div id="splitcheck" class="paymentContent">
+			<div class="checkDetail">
+			<h4>Check Details</h4>
+			</div>
+		
+				<button class="full">pay full</button>
+	
+				<button class="split">Split</button>
+
+		
+		</div>
+	
+		<script src="tabs.js"></script>
+		<script>
+			document.getElementById("split").click()
+		</script>
+		<script
+  			src="https://code.jquery.com/jquery-3.3.1.min.js"
+  			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  			crossorigin="anonymous">
+		</script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	</body>
+</html>
