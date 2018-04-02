@@ -12,9 +12,9 @@ function test(e){
 }
 
 
-var url='http://www.johnknowlesportfolio.com:3000';
+var url='http://www.johnknowlesportfolio.com:443';
 function getName(){
-	$.get('http://johnknowlesportfolio.com:3000/api/parties',function(data){
+	$.get('http://johnknowlesportfolio.com:443/api/parties',function(data){
 		console.log(data);
 		let output= '<div class="card">'//<ul class= "list-group">';
 		$.each(data, function(key,party){
