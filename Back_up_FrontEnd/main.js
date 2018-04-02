@@ -17,10 +17,10 @@ $(document).ready(function(){
 		$(this).parent().parent().siblings(".btn:first-child").val($(this).text());
 	});
 });
-
+var url='http://johnknowlesportfolio.com:443/api/parties'
 //get all parties
 function getParties(){
-	$.get('http://johnknowlesportfolio.com:3000/api/parties',function(data){
+	$.get(url,function(data){
 		console.log(data);
 		let output= '<ul class= "list-group">';
 		$.each(data, function(key,party){
@@ -36,7 +36,7 @@ function getParties(){
 
 function getPartiesByID(){
 	var w_ID=$('#w_ID').val();
-	$.get('http://johnknowlesportfolio.com:3000/api/parties/findByID/'+w_ID,function(data){
+	$.get(url+w_ID,function(data){
 		let output= '<ul class= "list-group">';
 		$.each(data, function(key,party){
 			console.log(data);
@@ -58,14 +58,16 @@ function addParty()
 
 	var p_Name=$('#p_Name').val();
 	var p_Count=$('#p_Count').val();
+	var p_Table=$('#p_Table').val();
 	var p_WaiterID=0;
 	console.log('posting');
 	$.ajax({
-		url: 'http://johnknowlesportfolio.com:3000/api/parties',
+		url: url,
 		data: JSON.stringify({
 			"p_Name": p_Name,
 			"p_Count": p_Count,
-			"p_WaiterID": p_WaiterID
+			"p_WaiterID": p_WaiterID,
+			"p_Table":p_Table
 		}),
 		type:'POST',
 		contentType:'application/json',

@@ -2,9 +2,18 @@ var express = require('express');
 var bodyParser= require('body-parser');
 var mongojs = require("mongojs");
 var db= mongojs('parties', ['parties']);
-//port = process.env.PORT || 8886;
+
+
+port = process.env.PORT || 443;
+
+
 
 var app= express();
+var cors=require('cors');
+
+app.use(cors({origin: '*'}));
+app.use(bodyParser.json());
+
 app.use(bodyParser.json());
 
 
@@ -109,9 +118,17 @@ app.delete('/api/parties/:id', function(req, res, next){
 	});
 });
 
+//Enable cross domain resource utility, essentially making a public API. weeee
+app.use(function(req, res, next) {
+	console.log('test');
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 
 //Weird shit to make a public API work
-app.listen(443, function(){
-	console.log("new Server started on port "+ 443);
+app.listen(port,'0.0.0.0', function(){
+	console.log("new Server started on port "+ port);
 });
