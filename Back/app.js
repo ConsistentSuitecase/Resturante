@@ -96,44 +96,6 @@ app.post('/api/parties', function(req, res, next){
 	});
 });
 
-/*
-//Update an item
-app.put('/api/jobs/:id', function(req, res, next){
-	//res.send('Update job '+req.params.id);
-	db.jobs.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
-		$set:{
-			//Name:req.body.Name,
-			//ID:req.body.ID,
-			//StartTime:req.body.StartTime,
-
-			p_fName: req.body.p_fName,
-			p_lName: req.body.p_lName,
-			p_ID: req.body.p_ID,
-			p_Email: req.body.p_Email,
-			p_FileName: req.body.p_FileName,
-			p_Phone: req.body.p_Phone,
-			p_MakerNameA: req.body.p_MakerNameA,
-			p_MakerNameP: req.body.p_MakerNameP,
-			p_Date: req.body.p_Date,
-			//Time_S: req.body.Time_S,
-			//Time_F: req.body.Time_F,
-			p_Infill: req.body.p_Infill,
-			p_Filament: req.body.p_Filament,
-			p_Success: req.body.p_Success,
-			Comment: req.body.Comment,
-			//more fields in here
-		}
-	},new: true}, function(err,doc){
-		if(err)
-		{
-			res.send(err);
-		}
-		console.log('item modified');
-		res.json(doc);
-	})
-
-});
-*/
 
 //Delete an item
 app.delete('/api/parties/:id', function(req, res, next){
