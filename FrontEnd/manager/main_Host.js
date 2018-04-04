@@ -7,7 +7,7 @@ $(document).ready(function(){
 });
 
 //fix this in a minute
-var url='localhost:443'
+var url='http://localhost:443'
 
 function test(e){
 	console.log('this is a function!');
@@ -25,7 +25,7 @@ function addParty()
 	var p_WaiterID=0;
 	console.log('posting');
 	$.ajax({
-		url: url,
+		url: url+'/api/parties',
 		data: JSON.stringify({
 			"p_Name": p_Name,
 			"p_Count": p_Count,
@@ -40,7 +40,7 @@ function addParty()
 		type:'POST',
 		contentType:'application/json',
 		success: function(data){
-			window.location.href='index.html';
+			//window.location.href='index.html';
 		},
 		error:function(xhr ,status, err){
 			console.log(err);
