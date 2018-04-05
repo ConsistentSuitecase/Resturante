@@ -22,7 +22,8 @@ function addParty()
 	var p_Count=$('#p_GroupCount').val();
 	//var p_Table=$('#p_Table').val();
 	var p_Table=1;
-	var p_WaiterID=0;
+	var values = [1000,1001,1002,1003];
+	var p_WaiterID=values[Math.floor(Math.random() * values.length)];
 	console.log('posting');
 	$.ajax({
 		url: url+'/api/parties',
@@ -40,7 +41,7 @@ function addParty()
 		type:'POST',
 		contentType:'application/json',
 		success: function(data){
-			//window.location.href='index.html';
+			window.location.href='host.html';
 		},
 		error:function(xhr ,status, err){
 			console.log(err);

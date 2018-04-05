@@ -64,3 +64,38 @@ function openPay(evt, payType) {
     evt.currentTarget.className += " active";
 	
 }
+function addFood()
+{
+    var p_Food=$('#p_Food').val();
+    var p_Request=$('#p_Food').val();
+    console.log('posting');
+    $.ajax({
+        url: url+'/api/menu',
+        data: JSON.stringify({
+            "p_Food": p_Food,
+            "p_Request": p_Request
+        }),
+        type: 'POST',
+        currentType:'application/json',
+        success: function(data){
+
+        }
+        error:function(xhr, status, err){
+            console.log(err);
+        }
+    });
+    $.ajax({
+        url: url+'/api/parties',
+        data: JSON.stringify({
+            "p_hasOrered":true,
+        })
+        type:'POST',
+        contentType:'application/json',
+        success: function(data){
+
+        }
+        error:function(xhr,status,err){
+            console.log(err);
+        }
+    });
+}
