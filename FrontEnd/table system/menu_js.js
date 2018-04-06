@@ -10,13 +10,13 @@ function test(e){
 	if(test==null)
 	{
 		console.log('starting order obj');
-		var orders=[
-		];
-		sessionStorage.setItem('orders',JSON.stringify(orders));
+		var orders={orders:[
+			]};
+			sessionStorage.setItem('orders',JSON.stringify(orders));
+		}
 	}
-}
 
-var url="http://localhost:443"
+	var url="http://localhost:443"
 //get active table
 function getActiveTable(e){
 	//probably dynamically assign this number later
@@ -32,23 +32,17 @@ function getActiveTable(e){
 				var table_id=party._id;
 				//append orders to the ticket
 				console.log('event fired');
-				var orders=[];
+
+    			//Grab orders from the cart
+    			var orders=JSON.parse(sessionStorage.getItem('orders'));
 				//append existing orders to the ticket here
 				
-				$each(party.p_Orders,function(key,order){
-					orders.push(order);
+				//append orders already on the ticket
+				$.each(party.p_Orders,function(key,order){
+					orders['orders'].push(order);
 				});
 
-				var orderCount=1;
-				for(var i=0; i<orderCount; i++){
-					var temp ={
-						Name : "Sweet Tea",
-						Description : "lol",
-						price : 1,
-						Complete:false
-					};
-					orders.push(temp);
-				}
+				//log that shit to the database
 				console.log(orders);
 				console.log(table_id);
 				console.log('putting');
@@ -67,6 +61,7 @@ function getActiveTable(e){
 			}
 		});
 				console.log(orders);
+
 			}
 		});
 	});
@@ -83,24 +78,28 @@ function addLecuce(){
 }
 
 function getOrders(){
-	var temp_arr=JSON.parse(sessionStorage.getItem('orders'));
-	$.each(temp_arr.order)
+
 }
 
-function kidsChick() {
-    console.log('kids chick');
-    var orders=JSON.parse(sessionStorage.getItem('orders'));
-
-    var temp={
-    	itemName:'Chicken Strips',
-    	itemDesc:'mini fried strips',
-    	itemPrice:6,
-    	comments:"Rare pls"
-    };
-    orders.push(JSON.stringify(temp));
-    sessionStorage.setItem('orders',orders);
-  	console.log(sessionStorage.getItem('orders'));
- }
+function addChicken(){
+	//pull from table
+	AddOrderToSession('chicken','tendies',1,'reeee');
+}
+function AddOrderToSession( name,  desc,  price,  comment) {
+	console.log('kids chick');
+	var orders=JSON.parse(sessionStorage.getItem('orders'));
+	console.log(orders);
+	var temp={
+		itemName:name,
+		itemDesc:desc,
+		itemPrice:price,
+		comments:comment
+	};
+	console.log(temp);
+	orders['orders'].push(temp);
+	sessionStorage.setItem('orders',JSON.stringify(orders));
+	console.log(sessionStorage.getItem('orders'));
+}
 
 /*
    function kidsChick() {
