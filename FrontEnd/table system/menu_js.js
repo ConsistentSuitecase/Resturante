@@ -40,9 +40,11 @@ function getActiveTable(e){
 				//append existing orders to the ticket here
 				
 				//append orders already on the ticket
+				if(party.p_Orders!='none'){
 				$.each(party.p_Orders,function(key,order){
 					orders['orders'].push(order);
 				});
+				}
 
 				//log that shit to the database
 				console.log(orders);
