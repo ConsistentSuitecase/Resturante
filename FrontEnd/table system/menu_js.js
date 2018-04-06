@@ -1,12 +1,20 @@
 $(document).ready(function(){
 	test();
 	$('#btn_placeOrder').click(getActiveTable);
-	//$('#kidschicken').click(clickCounter);
+	//$('#kidschicken').click(kidsChick);
 });
 var totalOrderCount = 0;
 
 function test(e){
-	console.log('test');
+	console.log('test function');
+	var test=sessionStorage.getItem('orders');
+	if(test==null)
+	{
+		console.log('starting order obj');
+		var orders=[
+		];
+		sessionStorage.setItem('orders',JSON.stringify(orders));
+	}
 }
 
 var url="http://localhost:443"
@@ -70,11 +78,33 @@ function addOrders(table_id){
 
 }
 
+
 function addLecuce(){
 	//store a lettuce object in session storage
 }
 
+function getOrders(){
+	var temp_arr=JSON.parse(sessionStorage.getItem('orders'));
+	$.each(temp_arr.order)
+}
+
 function kidsChick() {
+    console.log('kids chick');
+    var orders=JSON.parse(sessionStorage.getItem('orders'));
+
+    var temp={
+    	itemName:'Chicken Strips',
+    	itemDesc:'mini fried strips',
+    	itemPrice:6,
+    	comments:"Rare pls"
+    };
+    orders.push(JSON.stringify(temp));
+    sessionStorage.setItem('orders',orders);
+  	console.log(sessionStorage.getItem('orders'));
+ }
+
+/*
+   function kidsChick() {
     if(typeof(Storage) !== "undefined") {
         if (sessionStorage.clickcount) {
             sessionStorage.itemName="Chicken Strips";
@@ -88,5 +118,4 @@ function kidsChick() {
     console.log(sessionStorage.Description);
     console.log(sessionStorage.price);
     console.log(sessionStorage.comments);
-   }
-   
+   }*/
