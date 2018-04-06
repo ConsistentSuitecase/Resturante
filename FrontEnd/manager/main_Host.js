@@ -1,3 +1,4 @@
+var wait_1 =0,wait_2=0,wait_3=0,wait_4=0;
 $(document).ready(function(){
 	
 	console.log('hello world');
@@ -17,13 +18,53 @@ function addParty()
 {
 	//e.preventDefault();
 	//window.alert('submitting');
-
+	var test;
 	var p_Name=$('#p_GroupName').val();
 	var p_Count=$('#p_GroupCount').val();
 	//var p_Table=$('#p_Table').val();
 	var p_Table=1001;
 	var values = [1000,1001,1002,1003];
 	var p_WaiterID=values[Math.floor(Math.random() * values.length)];
+	if(p_WaiterID == 1000){
+		wait_1 +=1;
+	}
+	else if(p_WaiterID == 1001){
+		wait_2 +=1;
+	}
+	else if(p_WaiterID == 1002){
+		wait_3 +=1;
+	}
+	else if(p_WaiterID == 1003){
+		wait_3 +=1;
+	}
+	if(wait_1 == 4 ){//&& wait_2 !=4 && wait_3 != 4 && wait_4 !=4){
+		test = Math.min(wait_2,wait_3,wait_4);
+	}
+	else if(wait_2 == 4){// && wait_1 !=4 && wait_3 != 4 && wait_4 !=4){
+		test = Math.min(wait_1,wait_3,wait_4);
+	}
+	else if(wait_3 == 4){// && wait_1 !=4 && wait_2 != 4 && wait_4 !=4){
+		test = Math.min(wait_1,wait_2,wait_4);
+	}
+	else if(wait_4 == 4 ){//&& wait_1 !=4 && wait_3 != 4 && wait_4 !=4){
+		test = Math.min(wait_1,wait_3,wait_2);
+	}
+	if(test == wait_1){
+		p_WaiterID = 1000;
+		wait_1 +=1;
+	}
+	else if(test == wait_2){
+		p_WaiterID == 1001;
+		wait_2 += 1;
+	}
+	else if(test == wait_3){
+		p_WaiterID == 1002;
+		wait_3 += 1;
+	}
+	else if(test == wait_4){
+		p_WaiterID == 1004;
+		wait_4 += 1;
+	}
 	console.log('posting');
 	$.ajax({
 		url: url+'/api/parties',
@@ -34,7 +75,7 @@ function addParty()
 			"p_Table":p_Table,
 			"p_isSeated":true,
 			"p_hasOrdered":false,
-			"p_NeedsRefill":true,
+			"p_NeedsRefill":false,
 			"p_Orders":'none',
 			"p_HasPaid":false
 

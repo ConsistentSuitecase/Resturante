@@ -143,6 +143,7 @@ function getName4(){
 	}); 
 }
 function getHelp(){
+	console.log('getting');
 	$.get('http://localhost:443/api/parties',function(data){
 		console.log(data);
 		//for(i=1;i<5;i++){
@@ -153,9 +154,11 @@ function getHelp(){
 			// {
 			// 	let output = '<button type="button" id="test_button" style = "background-color:red">Help</button>'
 			// }
-			if(party.WaiterID == 1000){
-				if(party.p_NeedsRefill == true)
-				{
+			console.log(party.p_NeedsRefill);
+			
+			if(party.p_WaiterID == 1000 && party.p_NeedsRefill == true){
+				//if(party.p_NeedsRefill == true)
+				//{
 					i++;
 					let output = '<button type="button" style="background-color:red">refill</button>';
 					$('#btn_1000_'+i+'_refill').html(output);
@@ -179,9 +182,9 @@ function getHelp(){
 				*/
 
 				//let output2 = '<button type="button" id="test_button" style = "background-color:red">refill</button>'
-				}
+				//}
 			}
-			else if(party.WaiterID == 1001){
+			else if(party.p_WaiterID == 1001){
 				if(party.p_NeedsRefill == true){
 					k++;
 					let output = '<button type="button" style="background-color:red">refill</button>';
@@ -190,7 +193,7 @@ function getHelp(){
 				}
 
 			}
-			else if(party.WaiterID == 1001){
+			else if(party.p_WaiterID == 1002){
 				if(party.p_NeedsRefill == true){
 					j++;
 					let output = '<button type="button" style="background-color:red">refill</button>';
@@ -198,7 +201,7 @@ function getHelp(){
 					console.log(output);
 				}
 			}
-			else if(party.WaiterID == 1001){
+			else if(party.p_WaiterID == 1003){
 				if(party.p_NeedsRefill == true){
 					m++;
 					let output = '<button type="button" style="background-color:red">refill</button>';
