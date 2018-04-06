@@ -35,7 +35,12 @@ function addParty()
 			"p_isSeated":true,
 			"p_HasPaid":false,
 			"p_hasOrdered":false,
+<<<<<<< HEAD
 			"p_NeedsRefill":true
+=======
+			"p_NeedsRefill":false,
+			"p_HasPaid":false
+>>>>>>> 7195b579cb5f7f8fa945fd0fa9998fa4b787632c
 
 		}),
 		type:'POST',

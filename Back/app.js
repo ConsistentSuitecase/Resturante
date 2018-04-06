@@ -70,6 +70,8 @@ app.get('/api/parties/findByName/:p_Name', function(req, res, next){
 	});
 
 });
+
+
 //Fetch an item by waiter ID
 app.get('/api/parties/findByID/:p_WaiterID', function(req, res, next){
 	//console.log('Get one item '+req.params.w_ID);
@@ -86,6 +88,22 @@ app.get('/api/parties/findByID/:p_WaiterID', function(req, res, next){
 
 });
 
+
+//Fetch an item by table number
+app.get('/api/parties/findByTable/:p_Table', function(req, res, next){
+	//console.log('Get one item '+req.params.w_ID);
+	console.log('Table number being searched for ' + req.params.p_WaiterID);
+	db.parties.find({ p_Table: req.params.p_Table}, function(err, docs){
+		if(err)
+		{
+			res.send(err);
+		}
+		console.log('Party found!');
+		console.log(docs);
+		res.json(docs);
+	});
+
+});
 //fetch parties by seated status
 app.get('/api/parties/findBySeatedStatus/:p_isSeated', function(req, res, next){
 	//res.send('Get one item'+req.params.id);
@@ -169,6 +187,7 @@ app.put('/api/parties/:id', function(req, res, next){
 	})
 
 });
+
 
 //Update Attempts
 app.put('/api/parties/updateDrinkStatus/:id', function(req, res, next){
