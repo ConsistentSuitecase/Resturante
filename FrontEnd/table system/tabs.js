@@ -64,7 +64,6 @@ function openPay(evt, payType) {
     evt.currentTarget.className += " active";
 	
 }
-<<<<<<< Updated upstream
 /*function addFood()
 {
     var p_Food=$('#p_Food').val();
@@ -100,5 +99,3 @@ function openPay(evt, payType) {
         }
     });
 }*/
-=======
->>>>>>> Stashed changes
