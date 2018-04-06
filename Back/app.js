@@ -170,6 +170,7 @@ app.put('/api/parties/:id', function(req, res, next){
 
 });
 
+
 //Update Attempts
 app.put('/api/parties/updateDrinkStatus/:id', function(req, res, next){
 	//res.send('Update job '+req.params.id);
