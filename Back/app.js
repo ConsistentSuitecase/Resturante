@@ -64,13 +64,13 @@ app.get('/api/parties/findByName/:p_Name', function(req, res, next){
 		{
 			res.send(err);
 		}
-		console.log('print found!');
+		console.log('party found!');
 		res.json(docs);
 
 	});
 
 });
-//Fetch an item by student ID
+//Fetch an item by waiter ID
 app.get('/api/parties/findByID/:p_WaiterID', function(req, res, next){
 	//console.log('Get one item '+req.params.w_ID);
 	console.log('id being searched for ' + req.params.p_WaiterID);
@@ -86,6 +86,29 @@ app.get('/api/parties/findByID/:p_WaiterID', function(req, res, next){
 
 });
 
+//fetch parties by seated status
+app.get('/api/parties/findBySeatedStatus/:p_isSeated', function(req, res, next){
+	//res.send('Get one item'+req.params.id);
+	var boolean;
+	if(req.params.isComplete=='true')
+	{
+		boolean=true;
+	}
+	else
+	{
+		boolean=false;
+	}	
+	db.parties.find({p_isSeated: ''+req.params.p_isSeated}, function(err, docs){
+		if(err)
+		{
+			res.send(err);
+		}
+		console.log('party found!');
+		res.json(docs);
+
+	});
+
+});
 
 
 
@@ -94,13 +117,13 @@ app.get('/api/parties/findByID/:p_WaiterID', function(req, res, next){
 app.post('/api/parties', function(req, res, next){
 	//res.send('Add Item');
 	db.parties.insert(req.body, function(err, doc){
-	if(err)
-	{
-		res.send(err);
-	}
-	console.log(doc);
-	console.log('Adding partie');
-	res.json(doc);
+		if(err)
+		{
+			res.send(err);
+		}
+		console.log(doc);
+		console.log('Adding partie');
+		res.json(doc);
 	});
 });
 
@@ -121,10 +144,92 @@ app.delete('/api/parties/:id', function(req, res, next){
 //Enable cross domain resource utility, essentially making a public API. weeee
 app.use(function(req, res, next) {
 	console.log('test');
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	next();
 });
+
+
+//Update an item
+app.put('/api/parties/:id', function(req, res, next){
+	//res.send('Update job '+req.params.id);
+	db.jobs.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
+		$set:{
+			//Need to fill in additional feilds
+			p_fName: req.body.p_fName,
+			p_lName: req.body.p_lName
+		}
+	},new: true}, function(err,doc){
+		if(err)
+		{
+			res.send(err);
+		}
+		console.log('item modified');
+		res.json(doc);
+	})
+
+});
+
+//Update Attempts
+app.put('/api/parties/updateDrinkStatus/:id', function(req, res, next){
+	//res.send('Update job '+req.params.id);
+	db.jobs.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
+		$set:{
+
+			p_NeedsRefill:req.body.p_NeedsRefill
+		}
+	},new: true}, function(err,doc){
+		if(err)
+		{
+			res.send(err);
+		}
+		console.log('item modified');
+		res.json(doc);
+	})
+
+});
+
+//Update Help
+app.put('/api/parties/updateHelpStatus/:id', function(req, res, next){
+	//res.send('Update job '+req.params.id);
+	db.jobs.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
+		$set:{
+
+			p_HelpStatus:req.body.p_HelpStatus
+		}
+	},new: true}, function(err,doc){
+		if(err)
+		{
+			res.send(err);
+		}
+		console.log('item modified');
+		res.json(doc);
+	})
+
+});
+
+
+//Update isSeated
+app.put('/api/parties/updateSeatedStatus/:id', function(req, res, next){
+	//res.send('Update job '+req.params.id);
+	db.jobs.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
+		$set:{
+
+			p_isSeated:req.body.p_isSeated
+		}
+	},new: true}, function(err,doc){
+		if(err)
+		{
+			res.send(err);
+		}
+		console.log('item modified');
+		res.json(doc);
+	})
+
+});
+
+
+
 
 
 
