@@ -1,7 +1,9 @@
 $(document).ready(function(){
 	test();
 	$('#btn_placeOrder').click(getActiveTable);
+	//$('#kidschicken').click(clickCounter);
 });
+var totalOrderCount = 0;
 
 function test(e){
 	console.log('test');
@@ -20,41 +22,71 @@ function getActiveTable(e){
 
 			if(party.p_Table==tableNumber){
 				console.log(party);
-				addOrders(party._id);
-			}
-		});
-	});
-}
+				var table_id=party._id;
+				//append orders to the ticket
+				console.log('event fired');
+				var orders=[];
+				//append existing orders to the ticket here
+				
+				$each(party.p_Orders,function(key,order){
+					orders.push(order);
+				});
 
-//log attempts here
-	function addOrders(table_id){
-		console.log('event fired');
-		var orders=[];
-		var orderCount=1;
-		for(var i=0; i<orderCount; i++){
-			var temp ={
-				Name : "Sweet Tea",
-				Description : "lol",
-				price : 1
-			};
-			orders.push(temp);
-		}
-		console.log(orders);
-		console.log(table_id);
-		console.log('putting');
-		$.ajax({
-			url: url+'/api/party/logOrders/'+table_id,
-			data: JSON.stringify({
-				"p_Orders":orders
-			}),
-			type:'PUT',
-			contentType:'application/json',
-			success: function(data){
+				var orderCount=1;
+				for(var i=0; i<orderCount; i++){
+					var temp ={
+						Name : "Sweet Tea",
+						Description : "lol",
+						price : 1,
+						Complete:false
+					};
+					orders.push(temp);
+				}
+				console.log(orders);
+				console.log(table_id);
+				console.log('putting');
+				$.ajax({
+					url: url+'/api/party/logOrders/'+table_id,
+					data: JSON.stringify({
+						"p_Orders":orders
+					}),
+					type:'PUT',
+					contentType:'application/json',
+					success: function(data){
 				//window.location.href='main.html';
 			},
 			error:function(xhr ,status, err){
 				console.log(err);
 			}
 		});
-		console.log(orders);
-	}
+				console.log(orders);
+			}
+		});
+	});
+}
+
+//log attempts here
+function addOrders(table_id){
+
+}
+
+function addLecuce(){
+	//store a lettuce object in session storage
+}
+
+function kidsChick() {
+    if(typeof(Storage) !== "undefined") {
+        if (sessionStorage.clickcount) {
+            sessionStorage.itemName="Chicken Strips";
+            sessionStorage.Description="Mini fried chicken strips on popsicle sticks";
+            sessionStorage.price="$6.00";
+            sessionStorage.comments="";
+
+        }
+    }
+    console.log(sessionStorage.itemName);
+    console.log(sessionStorage.Description);
+    console.log(sessionStorage.price);
+    console.log(sessionStorage.comments);
+   }
+   

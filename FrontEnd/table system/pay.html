@@ -15,8 +15,8 @@
 	 		<a href="main.html">EXIT</a>
 	 		<button class="tablinks" onclick="openPay(event, 'splitcheck')" id="split">Splite Check</button>
 	 		<button class="tablinks" onclick="openPay(event, 'pay')">Pay</button>
-	 		<button class="tablinks" onclick="openPay(event, 'entree')">Add Tip</button>
-			<button class="tablinks" onclick="openPay(event, 'desserts')">Receipt</button>
+	 		<button class="tablinks" onclick="openPay(event, 'tip')">Add Tip</button>
+			<button class="tablinks" onclick="openPay(event, 'recipt')">Receipt</button>
 			<button class="button">Call Server</button>
 		</div>
 	
@@ -31,10 +31,23 @@
 		</div>
 		
 		<div id="pay" class="payContent">
-			<h1>hello</h1>
+		<div class="checkDetail">
+			<h4>Your total is</h4>
+			<div class="payment">
+				<button class="payOptions"> Pay with Card</button>
+				<button class="payOptions" onclick="openPay(event, 'recipt')"> Pay with Cash</button>
+			</div>
+			</div>
 			
 		</div>
-		
+			
+		<div id="recipt" class="payContent">
+			<h2>blsdsdfsd</h2>
+		</div>
+
+
+
+
 		<div id="splittab" class="payContent">
 			<h1>btich</h1>
 		</div>
