@@ -64,7 +64,7 @@ function openPay(evt, payType) {
     evt.currentTarget.className += " active";
 	
 }
-function addFood()
+/*function addFood()
 {
     var p_Food=$('#p_Food').val();
     var p_Request=$('#p_Food').val();
@@ -98,4 +98,4 @@ function addFood()
             console.log(err);
         }
     });
-}
+}*/
