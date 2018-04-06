@@ -35,7 +35,7 @@ function addParty()
 			"p_isSeated":true,
 			"p_HasPaid":false,
 			"p_hasOrdered":false,
-			"p_NeedsRefill":false
+			"p_NeedsRefill":true
 
 		}),
 		type:'POST',

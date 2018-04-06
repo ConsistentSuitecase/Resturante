@@ -154,8 +154,27 @@ function getHelp(){
 			// }
 			if(party.p_NeedsRefill == true)
 			{
+				let output = '<button type="button" style="background-color:red">refill</button>';
+				$('#btn_1001_refill').html(output);
+				console.log(output);
+				/*
 				alert(party.P_Name + " needs a refill");
-				party.p_NeedsRefill = false;
+				$.ajax({
+					url:url+'/api/parties/updateDrinkStatus/:id',
+					data: JSON.stringify({
+						"p_NeedsRefill":false
+					}),
+					type:'PUT',
+					contentType:'application/json',
+					success: function(data){
+						//window.location.href='host.html';
+					},
+					error:function(xhr ,status, err){
+						console.log(err);
+					}
+				});
+				*/
+
 				//let output2 = '<button type="button" id="test_button" style = "background-color:red">refill</button>'
 			}
 			i++;
