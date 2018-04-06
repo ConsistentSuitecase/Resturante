@@ -4,7 +4,6 @@ $(document).ready(function(){
 	//$('#kidschicken').click(kidsChick);
 });
 var totalOrderCount = 0;
-
 function test(e){
 	console.log('test function');
 	var test=sessionStorage.getItem('orders');

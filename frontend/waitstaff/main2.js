@@ -142,6 +142,22 @@ function getName4(){
 	//}
 	}); 
 }
+// function updateRefill(){
+// 	$.ajax({
+// 		url:url+'/api/parties/updateDrinkStatus/:id',
+// 		data: JSON.stringify({
+// 			"p_NeedsRefill":false
+// 		}),
+// 		type:'PUT',
+// 		contentType:'application/json',
+// 		success: function(data){
+// 			window.location.href='employee2.html';
+// 		},
+// 		error:function(xhr ,status, err){
+// 			console.log(err);
+// 		}
+// 	});
+// }
 function getHelp(){
 	console.log('getting');
 	$.get('http://localhost:443/api/parties',function(data){
@@ -160,26 +176,26 @@ function getHelp(){
 				//if(party.p_NeedsRefill == true)
 				//{
 					i++;
-					let output = '<button type="button" style="background-color:red">refill</button>';
+					let output = '<button id="refill_update" type="button" style="background-color:red">refill</button>';
 					$('#btn_1000_'+i+'_refill').html(output);
+					//$('#refill_update').click(updateRefill);
 					console.log(output);
-				/*
-				alert(party.P_Name + " needs a refill");
-				$.ajax({
-					url:url+'/api/parties/updateDrinkStatus/:id',
-					data: JSON.stringify({
-						"p_NeedsRefill":false
-					}),
-					type:'PUT',
-					contentType:'application/json',
-					success: function(data){
-						//window.location.href='host.html';
-					},
-					error:function(xhr ,status, err){
-						console.log(err);
-					}
-				});
-				*/
+
+				//alert(party.P_Name + " needs a refill");
+				// $.ajax({
+				// 	url:url+'/api/parties/updateDrinkStatus/:id',
+				// 	data: JSON.stringify({
+				// 		"p_NeedsRefill":false
+				// 	}),
+				// 	type:'PUT',
+				// 	contentType:'application/json',
+				// 	success: function(data){
+				// 		//window.location.href='host.html';
+				// 	},
+				// 	error:function(xhr ,status, err){
+				// 		console.log(err);
+				// 	}
+				// });
 
 				//let output2 = '<button type="button" id="test_button" style = "background-color:red">refill</button>'
 				//}
