@@ -1,3 +1,28 @@
+$(document).ready(function(){
+
+
+
+});
+
+function getOrders()
+{
+	var active_orders=[];
+	$.get('http://localhost:443/api/parties',function(data){
+			$.each(data, function(key,party){
+
+				//if table.exists
+				$.each(party.orders,function(key,order)){
+					console.log('test: Stepped into order list');
+					if(order.Complete==false)
+					{
+						active_orders.append(order);
+					}
+				}
+
+			});
+	});
+}
+
 function getName3(){
 	//$.get('http://johnknowlesportfolio.com:443/api/parties',function(data){
 		$.get('http://localhost:443/api/parties',function(data){
