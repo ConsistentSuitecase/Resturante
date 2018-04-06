@@ -21,7 +21,7 @@ function addParty()
 	var p_Name=$('#p_GroupName').val();
 	var p_Count=$('#p_GroupCount').val();
 	//var p_Table=$('#p_Table').val();
-	var p_Table=1;
+	var p_Table=1001;
 	var values = [1000,1001,1002,1003];
 	var p_WaiterID=values[Math.floor(Math.random() * values.length)];
 	console.log('posting');
@@ -33,9 +33,9 @@ function addParty()
 			"p_WaiterID": p_WaiterID,
 			"p_Table":p_Table,
 			"p_isSeated":true,
-			"p_HasPaid":false,
 			"p_hasOrdered":false,
-			"p_NeedsRefill":false,
+			"p_NeedsRefill":true,
+			"p_Orders":'none',
 			"p_HasPaid":false
 
 		}),

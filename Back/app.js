@@ -27,7 +27,7 @@ app.get('/', function(req, res, next){
 
 //Get all Items
 app.get('/api/parties', function(req, res, next){
-	//res.send('List active print jobs');
+	//res.send('List active print parties');
 	db.parties.find( function(err, docs){
 		if(err)
 		{
@@ -76,7 +76,7 @@ app.get('/api/parties/findByName/:p_Name', function(req, res, next){
 app.get('/api/parties/findByID/:p_WaiterID', function(req, res, next){
 	//console.log('Get one item '+req.params.w_ID);
 	console.log('id being searched for ' + req.params.p_WaiterID);
-	db.parties.find({ p_WaiterID: req.params.p_WaiterID}, function(err, docs){
+	db.parties.find({p_WaiterID: req.params.p_WaiterID}, function(err, docs){
 		if(err)
 		{
 			res.send(err);
@@ -92,13 +92,13 @@ app.get('/api/parties/findByID/:p_WaiterID', function(req, res, next){
 //Fetch an item by table number
 app.get('/api/parties/findByTable/:p_Table', function(req, res, next){
 	//console.log('Get one item '+req.params.w_ID);
-	console.log('Table number being searched for ' + req.params.p_WaiterID);
-	db.parties.find({ p_Table: req.params.p_Table}, function(err, docs){
+	console.log('Table number being searched for ' + req.params.p_Table);
+	var tableNumber=req.params.p_Table;
+	db.parties.find({p_Table: tableNumber}, function(err, docs){
 		if(err)
 		{
 			res.send(err);
 		}
-		console.log('Party found!');
 		console.log(docs);
 		res.json(docs);
 	});
@@ -171,7 +171,7 @@ app.use(function(req, res, next) {
 //Update an item
 app.put('/api/parties/:id', function(req, res, next){
 	//res.send('Update job '+req.params.id);
-	db.jobs.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
+	db.parties.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
 		$set:{
 			//Need to fill in additional feilds
 			p_fName: req.body.p_fName,
@@ -192,7 +192,7 @@ app.put('/api/parties/:id', function(req, res, next){
 //Update Attempts
 app.put('/api/parties/updateDrinkStatus/:id', function(req, res, next){
 	//res.send('Update job '+req.params.id);
-	db.jobs.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
+	db.parties.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
 		$set:{
 
 			p_NeedsRefill:req.body.p_NeedsRefill
@@ -211,7 +211,7 @@ app.put('/api/parties/updateDrinkStatus/:id', function(req, res, next){
 //Update Help
 app.put('/api/parties/updateHelpStatus/:id', function(req, res, next){
 	//res.send('Update job '+req.params.id);
-	db.jobs.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
+	db.parties.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
 		$set:{
 
 			p_HelpStatus:req.body.p_HelpStatus
@@ -231,7 +231,7 @@ app.put('/api/parties/updateHelpStatus/:id', function(req, res, next){
 //Update isSeated
 app.put('/api/parties/updateSeatedStatus/:id', function(req, res, next){
 	//res.send('Update job '+req.params.id);
-	db.jobs.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
+	db.parties.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
 		$set:{
 
 			p_isSeated:req.body.p_isSeated
@@ -249,6 +249,24 @@ app.put('/api/parties/updateSeatedStatus/:id', function(req, res, next){
 
 
 
+//Append items to the data object
+app.put('/api/party/logOrders/:id', function(req, res, next){
+	//res.send('Update job '+req.params.id);
+	console.log('test_log '+req.body.p_Orders);
+	db.parties.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
+		$set:{
+			p_Orders: req.body.p_Orders,
+		}
+	},new: true}, function(err,doc){
+		if(err)
+		{
+			res.send(err);
+		}
+		console.log('item modified');
+		res.json(doc);
+	})
+
+});
 
 
 
