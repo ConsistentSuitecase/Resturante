@@ -452,3 +452,21 @@ p{
 	margin: 20px 5px;
 	position: fixed;
 }
+
+.payment{
+	position: fixed;
+	right: 0;
+	height: 90%;
+	width: 50%;
+
+
+	
+}
+.payOptions{
+	display: block;
+	margin: auto;
+	width: 50%;
+	height: 10%;
+	margin-top: 50px;
+	background-color: white;
+}

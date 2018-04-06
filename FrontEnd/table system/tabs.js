@@ -62,8 +62,11 @@ function openPay(evt, payType) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(payType).style.display = "block";
     evt.currentTarget.className += " active";
+    //evt. += " active";
 	
 }
+
+
 /*function addFood()
 {
     var p_Food=$('#p_Food').val();
