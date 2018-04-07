@@ -1,21 +1,58 @@
-/*$(function(){
-    $.get('waitstaff', function(result){
-        var obj = $(result).find('script');
-        var page1X = $(result).find('div.myData').data('x');
-        var page1Y = $(result).find('div.myData').data('y');
-    });
-});
+function check(){
+	$.get('http://localhost:443/api/parties',function(data){
+		console.log(data);
+		$.each(data, function(key,party)
+		{
+			var j= party.p_Table-1000;
 
-window.setInterval(function wsname(ws, stat){
- document.getElementById(ws).style.color = "red";//dynamic name
- //dynamic color/status
- document.getElementById(stat).style.backgroundColor = "red";
-}, 5000);*/
-function check(ws, stat){
-	//need to take in variables check if ws matches with any ws#
-	//if so, look for stat# and insert status
-	//receive, work with 
- document.getElementById("ws1").style.color = "red";//dynamic name
- //dynamic color/status
- document.getElementById("stat1a").style.backgroundColor = "red";
+			if(party.p_WaiterID == 1000)
+			{
+				if(party.p_hasOrdered)
+					document.getElementById("Table"+j).style.backgroundColor = "red";			
+				else if(party.p_NeedsRefill)
+					document.getElementById("Table"+j).style.backgroundColor = "orange";
+				else if(party.p_HasPaid)
+					document.getElementById("Table"+j).style.backgroundColor = "white";
+				else if(party.p_isSeated)
+					document.getElementById("Table"+j).style.backgroundColor = "green";	
+			}
+
+			else if(party.p_WaiterID == 1001)
+			{
+				if(party.p_hasOrdered)
+					document.getElementById("Table"+j).style.backgroundColor = "red";			
+				else if(party.p_NeedsRefill)	
+					document.getElementById("Table"+j).style.backgroundColor = "orange";
+				else if(party.p_HasPaid)
+					document.getElementById("Table"+j).style.backgroundColor = "white";
+				else if(party.p_isSeated)
+					document.getElementById("Table"+j).style.backgroundColor = "green";									
+			}
+
+			else if(party.p_WaiterID == 1002)
+			{
+				if(party.p_hasOrdered)
+					document.getElementById("Table"+j).style.backgroundColor = "red";			
+				else if(party.p_NeedsRefill)	
+					document.getElementById("Table"+j).style.backgroundColor = "orange";
+				else if(party.p_HasPaid)
+					document.getElementById("Table"+j).style.backgroundColor = "white";
+				else if(party.p_isSeated)
+					document.getElementById("Table"+j).style.backgroundColor = "green";									
+			}
+
+			else if(party.p_WaiterID == 1003)
+			{
+				if(party.p_hasOrdered)
+					document.getElementById("Table"+j).style.backgroundColor = "red";			
+				else if(party.p_NeedsRefill)
+					document.getElementById("Table"+j).style.backgroundColor = "orange";
+				else if(party.p_HasPaid)
+					document.getElementById("Table"+j).style.backgroundColor = "white";
+				else if(party.p_isSeated)
+					document.getElementById("Table"+j).style.backgroundColor = "green";									
+			}
+		});
+	}); 
+	setTimeout(check,5000);
 }
