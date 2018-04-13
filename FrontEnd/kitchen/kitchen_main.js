@@ -9,29 +9,32 @@ function getOrders()
 	var active_orders=[];
 	$.get('http://localhost:443/api/parties',function(data){
 			$.each(data, function(key,party){
-				console.log(party.p_Orders.orders[1]);
+				console.log(party.p_Orders);
 				
-							let output = '<div class ="card" id="body">';
-							output += '<p>'+ party.p_Orders.orders[3] +'</p>';
-							output += '</div>';
-							$('#cardb1').html(output);
+							
 				//if table.exists
-//				$.each(party.orders,function(key,order){
-//					console.log('test: Stepped into order list');
+   				$.each(party.p_Orders,function(key,order){
+				//console.log('test: Stepped into order list');
 
-
-					/*if(order.complete==false)
+					if(order.complete==false)
 					{
-						active_orders.append(JSON.parse(order));
-					}*/
-//				});
+						console.log("appended");
+						active_orders.append(JSON.parse(orders));
+					}
+				});
 				
 
 			});
 	});
 
 	//console.log(party.p_Orders);
-
+	$.each(active_orders, function(key,order)
+	{
+		let output = '<div class ="card" id="body">';
+		output += '<p>'+ active_orders.Name[0] +'</p>';
+		output += '</div>';
+		$('#cardb1').html(output);
+	});
 
 
 
