@@ -8,13 +8,24 @@ function getOrders()
 {
 	var active_orders=[];
 	$.get('http://localhost:443/api/parties',function(data){
-			$.each(data, function(key,party){
-				console.log(party.p_Orders.orders[1]);
-				
-							let output = '<div class ="card" id="body">';
-							output += '<p>'+ party.p_Orders.orders[3] +'</p>';
-							output += '</div>';
-							$('#cardb1').html(output);
+		$.each(data, function(key,party){
+			//console.log(party);
+			$.each(party.p_Orders.orders,function(key,order){
+				console.log(order.itemName);
+				if(order.itemName!=undefined)
+				{
+					let output = '<div class ="card" id="body">';
+					output += '<p>'+ order.itemName +'</p>';
+					output += '</div>';
+					$('#'+party.p_Table).html(output);
+				}
+			});
+			/*
+			let output = '<div class ="card" id="body">';
+			output += '<p>'+ party.p_Orders.orders[3] +'</p>';
+			output += '</div>';
+			$('#cardb1').html(output);
+			*/
 				//if table.exists
 //				$.each(party.orders,function(key,order){
 //					console.log('test: Stepped into order list');
@@ -25,9 +36,9 @@ function getOrders()
 						active_orders.append(JSON.parse(order));
 					}*/
 //				});
-				
 
-			});
+
+});
 	});
 
 	//console.log(party.p_Orders);

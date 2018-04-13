@@ -173,7 +173,9 @@ function addCaramelChocolateSunday() {
 }
 //document.getElementById("total").innerHTML = 10;
 
-
+function printOrder() {
+	document.getElementById("everything").innerHTML = sessionStorage.getItem("itemName");
+}
 
 
 
