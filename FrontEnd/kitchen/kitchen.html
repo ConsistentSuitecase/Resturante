@@ -17,11 +17,14 @@
 
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <script src="kitchen_main.js"> </script>
+    <script src="kitchen_main.js"></script>
     <script> getOrders(); </script>
+
+
 
   </head>
 
@@ -37,21 +40,16 @@
           <div class="card h-100">
 
             <h4 class="card-header" id="first">Table 1</h4>
-            <div class="card-body1">
 
-              		<div class="card">
+            <div class="card-body1" id="cardb1">
 
-              			<!--<div class="card-body1" id="body1">
-                      <div class ="card-body2"> Name of Dish</div>
-              			</div>-->
-              		
-                  </div>
+
 
             </div>
 
             <div class="card-footer">
               <a href="#" class="btn btn-primary">Preparing</a>
-              <a href="#" class="btn btn-primary">Done</a>     
+              <input  href="#" class="btn btn-primary" type="button" value="Done" onclick="clearScreen()">
             </div>
 
           </div>
@@ -61,21 +59,17 @@
           <div class="card h-100">
 
             <h4 class="card-header" id="two">Table 2</h4>
-            <div class="card-body2">
+            <div class="card-body2" id="cardb2">
 
-                  <div class="card">
-
-                    <!--<div class="card-body1" id="body1">
-                      <div class ="card-body2"> Name of Dish</div>
-                    </div>-->
-                  
-                  </div>
+              <div class ="card" id="body">
+                  <p>Name of Dish</p>
+              </div>
 
             </div>
 
             <div class="card-footer">
               <a href="#" class="btn btn-primary">Preparing</a>
-              <a href="#" class="btn btn-primary">Done</a>     
+              <input  href="#" class="btn btn-primary" type="button" value="Done" onclick="clearScreen()">
             </div>
 
           </div>
@@ -87,13 +81,7 @@
             <h4 class="card-header" id="three">Table 3</h4>
             <div class="card-body3">
 
-                  <div class="card">
 
-                    <!--<div class="card-body1" id="body1">
-                      <div class ="card-body2"> Name of Dish</div>
-                    </div>-->
-                  
-                  </div>
 
             </div>
 
@@ -110,13 +98,7 @@
             <h4 class="card-header" id="four">Table 4</h4>
             <div class="card-body4">
 
-                  <div class="card">
 
-                    <!--<div class="card-body1" id="body1">
-                      <div class ="card-body2"> Name of Dish</div>
-                    </div>-->
-                  
-                  </div>
 
             </div>
 
@@ -134,13 +116,7 @@
             <h4 class="card-header" id="five">Table 5</h4>
             <div class="card-body5">
 
-                  <div class="card">
 
-                    <!--<div class="card-body1" id="body1">
-                      <div class ="card-body2"> Name of Dish</div>
-                    </div>-->
-                  
-                  </div>
 
             </div>
 
@@ -158,13 +134,7 @@
             <h4 class="card-header" id="six">Table 6</h4>
             <div class="card-body6">
 
-                  <div class="card">
 
-                    <!--<div class="card-body1" id="body1">
-                      <div class ="card-body2"> Name of Dish</div>
-                    </div>-->
-                  
-                  </div>
 
             </div>
 
@@ -207,13 +177,7 @@
             <h4 class="card-header" id="eight">Table 8</h4>
             <div class="card-body8">
 
-                  <div class="card">
 
-                    <!--<div class="card-body1" id="body1">
-                      <div class ="card-body2"> Name of Dish</div>
-                    </div>-->
-                  
-                  </div>
 
             </div>
 
@@ -231,13 +195,7 @@
             <h4 class="card-header" id="nine">Table 9</h4>
             <div class="card-body9">
 
-                  <div class="card">
 
-                    <!--<div class="card-body1" id="body1">
-                      <div class ="card-body2"> Name of Dish</div>
-                    </div>-->
-                  
-                  </div>
 
             </div>
 
@@ -255,13 +213,7 @@
             <h4 class="card-header" id="ten">Table 10</h4>
             <div class="card-body10">
 
-                  <div class="card">
 
-                    <!--<div class="card-body1" id="body1">
-                      <div class ="card-body2"> Name of Dish</div>
-                    </div>-->
-                  
-                  </div>
 
             </div>
 
@@ -279,13 +231,6 @@
             <h4 class="card-header" id="eleven">Table 11</h4>
             <div class="card-body11">
 
-                  <div class="card">
-
-                    <!--<div class="card-body1" id="body1">
-                      <div class ="card-body2"> Name of Dish</div>
-                    </div>-->
-                  
-                  </div>
 
             </div>
 
@@ -327,13 +272,7 @@
             <h4 class="card-header" id="thirteen">Table 13</h4>
             <div class="card-body13">
 
-                  <div class="card">
 
-                    <!--<div class="card-body1" id="body1">
-                      <div class ="card-body2"> Name of Dish</div>
-                    </div>-->
-                  
-                  </div>
 
             </div>
 
@@ -352,13 +291,6 @@
             <h4 class="card-header" id="fourteen">Table 14</h4>
             <div class="card-body14">
 
-                  <div class="card">
-
-                    <!--<div class="card-body1" id="body1">
-                      <div class ="card-body2"> Name of Dish</div>
-                    </div>-->
-                  
-                  </div>
 
             </div>
 
@@ -376,13 +308,7 @@
             <h4 class="card-header" id="fifthteen">Table 15</h4>
             <div class="card-body15">
 
-                  <div class="card">
 
-                    <!--<div class="card-body1" id="body1">
-                      <div class ="card-body2"> Name of Dish</div>
-                    </div>-->
-                  
-                  </div>
 
             </div>
 
@@ -400,13 +326,6 @@
             <h4 class="card-header" id="sixteen">Table 16</h4>
             <div class="card-body16">
 
-                  <div class="card">
-
-                    <!--<div class="card-body1" id="body1">
-                      <div class ="card-body2"> Name of Dish</div>
-                    </div>-->
-                  
-                  </div>
 
             </div>
 
@@ -420,12 +339,9 @@
 
       </div>
 
-
-
+    
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+  
   </body>
 
 </html>
