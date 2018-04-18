@@ -122,6 +122,18 @@ background-position: center;
 	height: 100%;
 	padding-top: 60px;
 }
+
+
+.shirt-list{
+	position: fixed;
+	
+	right: 0;
+	margin: 0;
+	width: 60%;
+	height: 100%;
+	padding-top: 60px;
+}
+
 .teaphoto{
 	position: fixed;
 	padding: 0;
@@ -131,11 +143,6 @@ background-position: center;
 	height: 100%;
 	
 }
-
-
-	
-	
-	
 
 h3{
 	color: black;
@@ -210,7 +217,7 @@ p{
     transition: 0.3s;
 	color:white;
 	text-size: 14px;
-	width: 15%;
+	width: 12%;
 }
 
 .tabbar a{
