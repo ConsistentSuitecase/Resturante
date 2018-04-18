@@ -33,9 +33,29 @@ function printlist()
 	});
 }
 
+
+function getActiveTableID(tableNumber){
+	console.log(tableNumber);
+	
+
+}
 function test(e){
 	console.log('test function');
 	var test=sessionStorage.getItem('orders');
+
+	// this.tablenumber here
+	var tableNumber=1001;
+	$.get(url+'/api/parties',function(data){
+		$.each(data, function(key,party){
+			if(party.p_Table==tableNumber){
+				console.log(party);
+				$('#table_name').html('<h3>'+party.p_Name+'</h3>');
+				
+			}
+		});
+	});
+
+	
 	if(test==null)
 	{
 		console.log('starting order obj');
@@ -44,6 +64,7 @@ function test(e){
 			sessionStorage.setItem('orders',JSON.stringify(orders));
 		}
 	}
+	
 
 
 
@@ -95,11 +116,11 @@ function test(e){
 	}
 
 
-function buyShirt(e){
-	alert('buying shirt');
+	function buyShirt(e){
+		alert('buying shirt');
 		AddOrderToSession('T-Shirt', 'beautiful, Professional shirt', .25, '' );
 
-}
+	}
 //get active table
 function sendOrders(e){
 	//probably dynamically assign this number later
