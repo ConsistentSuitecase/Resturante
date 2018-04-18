@@ -1,21 +1,17 @@
-<!--stuff i did
--i added w3 link to help move the boxes around
--removed all buttons, but one to convert into "report"
--shifted "report to the center at the very bottom"
--add box to each box/waitstaff (above the breaks<br>)
--->
 <!--stuff to do
 -link sales and popularity to "report"
--dynamic light to react in 4 colors: green, orange, red and white(hex code in ws' name)
+
+-dynamic light to react in 4 colors: green, orange, red and white
  - the rectangles have id, so we may need to use em
  - receive status from customer
   -Green=Good
   -Orange=Refill
   -Red=Help
   -White=Empty Table
--dynamic name in box when they log in
- - probably need to id card-header
+
+-dynamically check waitstaff's ID
  - Receive staff's name from waitstaff interface
+
 -Check status every # seconds
 -->
 
@@ -38,76 +34,97 @@
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
 
+    <script src="manager.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script> check();</script>
+
   </head>
   
    <style>
+    #bod
+    {
+      background: url(Seafood.png);
+      background-size: 1500px 844px;
+    }
+    .h-100
+    {
+      background-color: lightblue;
+    }
+    .card-header
+    {
+      background-color: lightblue;
+    }
     .card-footer
     {
-    	background-color: #DCDCDC;
+    	background-color: lightgrey;
     }
-	.rectangle
-	{
-	  height: 40px;
-	  width: 100px;
-	  background-color: #FFFFFF;
-	}
-  #stat1a
-  {
-    height: 40px;
-    width: 100px;
-    background-color: #FFA500;
-  }	#report 
-	{
-	    position:absolute;
-	    transition: .5s ease;
-	    top: 75%;
-	    left: 46%;
-	}
+  	.rectangle
+  	{
+  	  height: 40px;
+  	  width: 100px;
+      background-color: white;
+  	}
+    #sales
+  	{
+  	    position:absolute;
+  	    transition: .5s ease;
+  	    top: 75%;
+  	    left: 50%;
+  	}
+    #popular
+    {
+        position:absolute;
+        transition: .5s ease;
+        top: 75%;
+        left: 43%;
+    }
   </style>
   <!--manuever report to center bottom, and adjust wsL and wsR-->
 
-  <body>
+  <body id="bod">
     <!-- Page Content -->
     <div class="container">
       <!-- Marketing Icons Section -->
       <div class="row">
         <div class="col-lg-4 mb-4 w3-display-topleft">
           <div class="card h-100">
-            <h4 id="ws1" class="card-header">FF0000=red</h4>
+            <h4 id="ws0" class="card-header">1000</h4>
             <div class="card-footer w3-display-container">
-             <div id="stat1a" class="rectangle w3-display-topleft">Table 1</div>         
-             <div id="stat1b" class="rectangle w3-display-topright">Table 2</div>
-             <div id="stat1c" class="rectangle w3-display-bottomleft">Table 3</div>   
-             <div id="stat1d" class="rectangle w3-display-bottomright">Table 4</div>                                             
+             <div id="Table1" class="rectangle w3-display-topleft">Table 1</div>         
+             <div id="Table2" class="rectangle w3-display-topright">Table 2</div>
+             <div id="Table3" class="rectangle w3-display-bottomleft">Table 3</div>   
+             <div id="Table4" class="rectangle w3-display-bottomright">Table 4</div>                                             
              <p><br><br><br><br><br><br><br><br></p>
             </div>
           </div>
         </div>
         <div class="col-lg-4 mb-4 w3-display-topright"">
           <div class="card h-100">
-            <h4 id="ws2" class="card-header">FFA500=orange</h4>
+            <h4 id="ws1" class="card-header">1001</h4>
             <div class="card-footer w3-display-container">
-             <div id="stat2a" class="rectangle w3-display-topleft">Table 1</div>      
-             <div id="stat2b" class="rectangle w3-display-topright">Table 2</div>
-             <div id="stat2c" class="rectangle w3-display-bottomleft">Table 3</div>  
-             <div id="stat2d" class="rectangle w3-display-bottomright">Table 4</div>
+             <div id="Table5" class="rectangle w3-display-topleft">Table 5</div>      
+             <div id="Table6" class="rectangle w3-display-topright">Table 6</div>
+             <div id="Table7" class="rectangle w3-display-bottomleft">Table 7</div>  
+             <div id="Table8" class="rectangle w3-display-bottomright">Table 8</div>
              <p><br><br><br><br><br><br><br><br></p>            
             </div>
           </div>
         </div>
     </div>
-    <a id="report" href="#" class="btn btn-primary" onClick="wsname()">Report</a>
+    <a id="sales" href="sales.html" class="btn btn-primary">Sales</a>
+    <a id="popular" href="popular.html" class="btn btn-primary">Popular</a>    
 <!--add function to this?-->
 
       <div class="row">
         <div class="col-lg-4 mb-4 w3-display-bottomleft"">
           <div class="card h-100">
-            <h4 id="ws3" class="card-header">008000=green</h4>
+            <h4 id="ws2" class="card-header">1002</h4>
             <div class="card-footer w3-display-container">
-             <div id="stat3a" class="rectangle w3-display-topleft">Table 1</div>         
-             <div id="stat3b" class="rectangle w3-display-topright">Table 2</div>
-             <div id="stat3c" class="rectangle w3-display-bottomleft">Table 3</div>   
-             <div id="stat3d" class="rectangle w3-display-bottomright">Table 4</div>                 	
+             <div id="Table9" class="rectangle w3-display-topleft">Table 9</div>         
+             <div id="Table10" class="rectangle w3-display-topright">Table 10</div>
+             <div id="Table11" class="rectangle w3-display-bottomleft">Table 11</div>   
+             <div id="Table12" class="rectangle w3-display-bottomright">Table 12</div>                 	
              <p><br><br><br><br><br><br><br><br></p>
             </div>
           </div>
@@ -115,24 +132,18 @@
 
       <div class="col-lg-4 mb-4 w3-display-bottomright">
         <div class="card h-100">
-            <h4 id="ws4" class="card-header">FFFFFF=white</h4>
+            <h4 id="ws3" class="card-header">1003</h4>
             <div class="card-footer w3-display-container">
-             <div id="stat4a" class="rectangle w3-display-topleft">Table 1</div>         
-             <div id="stat4b" class="rectangle w3-display-topright">Table 2</div>
-             <div id="stat4c" class="rectangle w3-display-bottomleft">Table 3</div>   
-             <div id="stat4d" class="rectangle w3-display-bottomright">Table 4</div>                	
+             <div id="Table13" class="rectangle w3-display-topleft">Table 13</div>         
+             <div id="Table14" class="rectangle w3-display-topright">Table 14</div>
+             <div id="Table15" class="rectangle w3-display-bottomleft">Table 15</div>   
+             <div id="Table16" class="rectangle w3-display-bottomright">Table 16</div>                	
              <p><br><br><br><br><br><br><br><br></p>            
             </div>
           </div>
         </div>
       </div>
-
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="manager.js"></script>
-
-
   </body>
 
 </html>
