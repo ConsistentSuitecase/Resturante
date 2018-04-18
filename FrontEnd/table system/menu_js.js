@@ -1,15 +1,14 @@
 $(document).ready(function(){
 	test();
-	$('#btn_placeOrder').click(getActiveTable);
+	displayCart();
+	$('#btn_placeOrder').click(sendOrders);
+	$('#btn_DisplayOrdered').click(displayOrderedFood);
+
 	//$('#kidschicken').click(kidsChick);
 });
-<<<<<<< HEAD
 var totalOrderCount = 0;
-=======
 var totalOrder = 0;
 
-
->>>>>>> 1964640f07eb4dc870b5c4608e8e2023a4733a2f
 function test(e){
 	console.log('test function');
 	var test=sessionStorage.getItem('orders');
@@ -22,37 +21,89 @@ function test(e){
 		}
 	}
 
+
+
 	var url="http://localhost:443"
+
+
+
+	function displayCart(e){
+		var cart_orders=JSON.parse(sessionStorage.getItem('orders'));
+		let output='<ul>'
+		for(var i=0;i<cart_orders.orders.length;i++)
+		{
+			console.log(i);
+			console.log(cart_orders.orders[i]);
+			output+='<li>'+cart_orders.orders[i].itemName+'</li>';
+		}
+		output+='</ul>'
+		$('#cart').html(output);
+	}
+
+	function displayOrderedFood(e){
+		
+		var tableNumber=1001;
+		$.get(url+'/api/parties',function(data){
+			$.each(data, function(key,party){
+
+				if(party.p_Table==tableNumber){
+				//redner the food
+				let output='<ul>'
+				for(var i=0;i<party.p_Orders.length;i++)
+				{
+					console.log(i);
+					console.log(party.p_Orders[i]);
+					output+='<li>'+party.p_Orders[i].itemName+'</li>';
+				}
+				output+='</ul>'
+				$('#sentOrders').html(output);
+				return;
+			}
+		});
+		});
+	}
+
+
 //get active table
-function getActiveTable(e){
+function sendOrders(e){
 	//probably dynamically assign this number later
 	//add some more shit about active table conditions in here later
 	var tableNumber=1001;
-	console.log('fuck it we will do it live');
-	$.get(url+'/api/parties',function(data){
-		console.log(data);
-		$.each(data, function(key,party){
 
+	//Get all parties
+	$.get(url+'/api/parties',function(data){
+		//console.log(data);
+
+		//for each party that has our table numer
+		$.each(data, function(key,party){
 			if(party.p_Table==tableNumber){
-				console.log(party);
+
 				var table_id=party._id;
+				
 				//append orders to the ticket
 				console.log('event fired');
 
     			//Grab orders from the cart
-    			var orders=JSON.parse(sessionStorage.getItem('orders'));
-				//append existing orders to the ticket here
-				
+    			var cart_orders=JSON.parse(sessionStorage.getItem('orders'));
+
+    			console.log(cart_orders);
+    			var orders=[];
+
+    			for(var i=0;i<cart_orders.orders.length;i++)
+    			{
+    				console.log(i);
+    				orders.push(cart_orders.orders[i]);
+    			}
 				//append orders already on the ticket
 				if(party.p_Orders!='none'){
-				$.each(party.p_Orders,function(key,order){
-					orders['orders'].push(order);
-				});
+					$.each(party.p_Orders,function(key,order){
+						orders.push(order);
+					});
 				}
 
 				//log that shit to the database
 				console.log(orders);
-				console.log(table_id);
+				//console.log(table_id);
 				console.log('putting');
 				$.ajax({
 					url: url+'/api/party/logOrders/'+table_id,
@@ -62,14 +113,14 @@ function getActiveTable(e){
 					type:'PUT',
 					contentType:'application/json',
 					success: function(data){
-				//window.location.href='main.html';
-			},
-			error:function(xhr ,status, err){
-				console.log(err);
-			}
-		});
-				console.log(orders);
-
+						//clear the local storage
+						sessionStorage.clear();
+						window.location.href='main.html';
+					},
+					error:function(xhr ,status, err){
+						console.log(err);
+					}
+				});
 			}
 		});
 	});
