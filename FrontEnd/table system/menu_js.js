@@ -9,6 +9,33 @@ $(document).ready(function(){
 var totalOrderCount = 0;
 var totalOrder = 0;
 
+<<<<<<< HEAD
+=======
+//My Edit
+function printlist()
+{
+	var active_orders=[];
+	$.get('http://localhost:443/api/parties',function(data){
+		$.each(data, function(key,party){
+			//console.log(party);
+			$.each(party.p_Orders.orders,function(key,order){
+				console.log(order.itemName);
+				//if (list is empty)
+				if(order.itemName!=undefined)
+				{
+					let output = '<div id="cart" class="ordercontent">';					
+					output += '<p>'+ order.itemName +': </p>';
+					output += '</div>';
+					$('#'+party.p_Table).html(output);
+
+				}			
+			});
+
+		});
+	});
+}
+
+>>>>>>> d840214228e2cb2faa3fdf6992fb83c7bf24b32e
 function test(e){
 	console.log('test function');
 	var test=sessionStorage.getItem('orders');

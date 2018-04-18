@@ -28,26 +28,10 @@ function getOrders()
 					$('#'+party.p_Table).html(output);
 				}
 			});
-			/*
-			let output = '<div class ="card" id="body">';
-			output += '<p>'+ party.p_Orders.orders[3] +'</p>';
-			output += '</div>';
-			$('#cardb1').html(output);
-			*/
-				//if table.exists
-//				$.each(party.orders,function(key,order){
-//					console.log('test: Stepped into order list');
 
-
-					/*if(order.complete==false)
-					{
-						active_orders.append(JSON.parse(order));
-					}*/
-//				});
-
-
-});
+		});
 	});
+<<<<<<< HEAD
 <<<<<<< HEAD
 	//console.log(active_orders);
 	// var i = 0;
@@ -69,6 +53,8 @@ function getOrders()
 >>>>>>> 1964640f07eb4dc870b5c4608e8e2023a4733a2f
 
 
+=======
+>>>>>>> d840214228e2cb2faa3fdf6992fb83c7bf24b32e
 }
 
 function clearScreen_1()
