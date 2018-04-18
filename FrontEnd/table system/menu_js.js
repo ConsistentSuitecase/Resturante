@@ -9,8 +9,6 @@ $(document).ready(function(){
 var totalOrderCount = 0;
 var totalOrder = 0;
 
-<<<<<<< HEAD
-=======
 //My Edit
 function printlist()
 {
@@ -35,7 +33,6 @@ function printlist()
 	});
 }
 
->>>>>>> d840214228e2cb2faa3fdf6992fb83c7bf24b32e
 function test(e){
 	console.log('test function');
 	var test=sessionStorage.getItem('orders');
