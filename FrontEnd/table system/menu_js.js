@@ -53,13 +53,16 @@ function test(e){
 
 	function displayCart(e){
 		var cart_orders=JSON.parse(sessionStorage.getItem('orders'));
+		var totalCost=0;
 		let output='<ul>'
 		for(var i=0;i<cart_orders.orders.length;i++)
 		{
 			console.log(i);
 			console.log(cart_orders.orders[i]);
-			output+='<li>'+cart_orders.orders[i].itemName+'</li>';
+			output+='<li>'+cart_orders.orders[i].itemName+'   $'+cart_orders.orders[i].itemPrice+'</li>';
+			totalCost+=cart_orders.orders[i].itemPrice;
 		}
+		output+='<li> Total Price of cart: '+totalCost+'</li>';
 		output+='</ul>'
 		$('#cart').html(output);
 	}
@@ -72,13 +75,17 @@ function test(e){
 
 				if(party.p_Table==tableNumber){
 				//redner the food
+				
+				var totalCost=0;
 				let output='<ul>'
+
 				for(var i=0;i<party.p_Orders.length;i++)
 				{
 					console.log(i);
-					console.log(party.p_Orders[i]);
-					output+='<li>'+party.p_Orders[i].itemName+'</li>';
+					output+='<li>'+party.p_Orders[i].itemName+'   $'+party.p_Orders[i].itemPrice+'</li>';
+					totalCost+=party.p_Orders[i].itemPrice;
 				}
+				output+='<li> Total Price of all ordered items: '+totalCost+'</li>';
 				output+='</ul>'
 				$('#sentOrders').html(output);
 				return;
