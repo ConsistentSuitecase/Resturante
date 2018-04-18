@@ -16,7 +16,7 @@
 	<div class="helpBar">
 		<button class="button">Call Server</button>
 		<button class="button">Refill Drinks</button>
-		<a href="cart.html"><button class="button"><i class="fas fa-cart-plus"></i> 0</button></a>
+		<a href="cart.html"><button class="button"><i class="fas fa-cart-plus" id="total"></i> </button></a>
 	</div>
 
 	<div class="tabbar">
@@ -131,13 +131,13 @@
 						<button class="orderbutton" onclick="addThaiLettuceWraps()" type="button"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3 class="menuitem">Thai Lettuce Wraps</h3>
-						<p class="itemdescription">Wild Hog Wrapped in Bibb Lettuce, Pineapple & Cherry Tomato, Red Onion & Peanut Sauce, Puffed Rice</p>
+						<p class="itemdescription">Wild Hog Wrapped in Bibb Lettuce, Pineapple and Cherry Tomato, Red Onion and Peanut Sauce, Puffed Rice</p>
 					</div>
 				</div>
 				<!-- Slide Two - Set the background image for this slide in the line below -->
 				<div class="carousel-item" style="background-image: url(pictures/ousters.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addOysters()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3>Second Slide</h3>
 						<p>This is a description for the second slide.</p>
@@ -146,7 +146,7 @@
 				<!-- Slide Three - Set the background image for this slide in the line below -->
 				<div class="carousel-item" style="background-image: url(pictures/platter2.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addSalmon()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3>Third Slide</h3>
 						<p>This is a description for the third slide.</p>
@@ -155,7 +155,7 @@
 				<!-- Slide Three - Set the background image for this slide in the line below -->
 				<div class="carousel-item" style="background-image: url(pictures/calamari.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addFriedOctopus()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3>Third Slide</h3>
 						<p>This is a description for the third slide.</p>
@@ -164,7 +164,7 @@
 				<!-- Slide Three - Set the background image for this slide in the line below -->
 				<div class="carousel-item" style="background-image: url(pictures/shrimp.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addPlatter()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3>Third Slide</h3>
 						<p>This is a description for the third slide.</p>
@@ -195,7 +195,7 @@
 				<!-- Slide One - Set the background image for this slide in the line below -->
 				<div class="carousel-item active" style="background-image: url(pictures/salmon.png)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addBourbonSalmon()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$28.00</h5>
 						<h3 class="menuitem">Bourbon Salmon</h3>
 						<p>Atlantic Salmon Filet Char Grilled, Bourbon Barbeque Sauce, Asparagus, Quinoa Rice</p>
@@ -204,7 +204,7 @@
 				<!-- Slide Two - Set the background image for this slide in the line below -->
 				<div class="carousel-item" style="background-image: url(pictures/fishandchips.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addFriedCatfish()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3>Second Slide</h3>
 						<p>This is a description for the second slide.</p>
@@ -213,7 +213,7 @@
 				<!-- Slide Three - Set the background image for this slide in the line below -->
 				<div class="carousel-item" style="background-image: url(pictures/burger.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addAngusBurger()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3>Third Slide</h3>
 						<p>This is a description for the third slide.</p>
@@ -222,7 +222,7 @@
 				<!-- Slide Three - Set the background image for this slide in the line below -->
 				<div class="carousel-item" style="background-image: url(pictures/pasta.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addSeaFoodPasta()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3>Third Slide</h3>
 						<p>This is a description for the third slide.</p>
@@ -231,7 +231,7 @@
 				<!-- Slide Three - Set the background image for this slide in the line below -->
 				<div class="carousel-item" style="background-image: url(pictures/crab.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addKingCrab()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3>Third Slide</h3>
 						<p>This is a description for the third slide.</p>
@@ -262,7 +262,7 @@
 				<!-- Slide One - Set the background image for this slide in the line below -->
 				<div class="carousel-item active" style="background-image: url(pictures/chocolatecake.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>			
+						<button class="orderbutton" onclick="addChocolateMouseCake()"><i class="fas fa-cart-plus"></i> Add to Order</button>			
 						<h5 class="price">$8.00</h5>
 						<h3 class="menuitem">Chocolate Mouse Cake</h3>
 						<p>This is a description for the third slide.</p>
@@ -271,7 +271,7 @@
 				<!-- Slide Two - Set the background image for this slide in the line below -->
 				<div class="carousel-item" style="background-image: url(pictures/rwb.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addFamousAmericanJelloShot()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3>Second Slide</h3>
 						<p>This is a description for the second slide.</p>
@@ -280,7 +280,7 @@
 				<!-- Slide Three - Set the background image for this slide in the line below -->
 				<div class="carousel-item" style="background-image: url(pictures/banana.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addCaramelCheesecake()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3>Third Slide</h3>
 						<p>This is a description for the third slide.</p>
@@ -289,7 +289,7 @@
 				<!-- Slide Three - Set the background image for this slide in the line below -->
 				<div class="carousel-item" style="background-image: url(pictures/cake.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addRedandBlueFruitIcecreamCake()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3>Third Slide</h3>
 						<p>This is a description for the third slide.</p>
@@ -298,7 +298,7 @@
 				<!-- Slide Three - Set the background image for this slide in the line below -->
 				<div class="carousel-item" style="background-image: url(pictures/icecream.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addCaramelChocolateSunday()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3>Third Slide</h3>
 						<p>This is a description for the third slide.</p>
@@ -338,7 +338,7 @@
 				<!-- Slide Two - Set the background image for this slide in the line below -->
 				<div class="carousel-item" style="background-image: url(pictures/sliders.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addSliders()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3>Second Slide</h3>
 						<p>This is a description for the second slide.</p>
@@ -347,7 +347,7 @@
 				<!-- Slide Three - Set the background image for this slide in the line below -->
 				<div class="carousel-item" style="background-image: url(pictures/kidschees.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addGrilledCheese()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3>Third Slide</h3>
 						<p>This is a description for the third slide.</p>
@@ -356,7 +356,7 @@
 				<!-- Slide Three - Set the background image for this slide in the line below -->
 				<div class="carousel-item" style="background-image: url(pictures/kids-shrimp-plate.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addMiniFriedShrimp()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3>Third Slide</h3>
 						<p>This is a description for the third slide.</p>
@@ -365,7 +365,7 @@
 				<!-- Slide Three - Set the background image for this slide in the line below -->
 				<div class="carousel-item" style="background-image: url(pictures/kid-s-shrimp-tacos.jpg)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button class="orderbutton" onclick="addSeaFoodTacos()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$12.00</h5>
 						<h3>Third Slide</h3>
 						<p>This is a description for the third slide.</p>

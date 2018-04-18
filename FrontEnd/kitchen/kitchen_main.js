@@ -8,23 +8,51 @@ function getOrders()
 {
 	var active_orders=[];
 	$.get('http://localhost:443/api/parties',function(data){
+<<<<<<< HEAD
 			$.each(data, function(key,party){
 				console.log(party.p_Orders);
 				
 							
+=======
+		$.each(data, function(key,party){
+			//console.log(party);
+			$.each(party.p_Orders.orders,function(key,order){
+				console.log(order.itemName);
+				if(order.itemName!=undefined)
+				{
+					let output = '<div class ="card" id="body">';
+					output += '<p>'+ order.itemName +'</p>';
+					output += '</div>';
+					$('#'+party.p_Table).html(output);
+				}
+			});
+			/*
+			let output = '<div class ="card" id="body">';
+			output += '<p>'+ party.p_Orders.orders[3] +'</p>';
+			output += '</div>';
+			$('#cardb1').html(output);
+			*/
+>>>>>>> 1964640f07eb4dc870b5c4608e8e2023a4733a2f
 				//if table.exists
    				$.each(party.p_Orders,function(key,order){
 				//console.log('test: Stepped into order list');
 
 					if(order.complete==false)
 					{
+<<<<<<< HEAD
 						console.log("appended");
 						active_orders.append(JSON.parse(orders));
 					}
 				});
 				
+=======
+						active_orders.append(JSON.parse(order));
+					}*/
+//				});
+>>>>>>> 1964640f07eb4dc870b5c4608e8e2023a4733a2f
 
-			});
+
+});
 	});
 
 	//console.log(party.p_Orders);

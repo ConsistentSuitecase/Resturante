@@ -3,7 +3,8 @@ $(document).ready(function(){
 	$('#btn_placeOrder').click(getActiveTable);
 	//$('#kidschicken').click(kidsChick);
 });
-var totalOrderCount = 0;
+var totalOrder = 0;
+
 
 function test(e){
 	console.log('test function');
@@ -84,16 +85,24 @@ function getOrders(){
 
 }
 
+function totalOrderCount() {
+	totalOrder++;
+	console.log(totalOrder);
+}
 //Appatizers
 function addThaiLettuceWraps(){
 	AddOrderToSession('Thai Lettus Wraps', 'Wild Hog Wrapped in Bibb Lettuce, Pineapple & Cherry Tomato, Red Onion & Peanut Sauce, Puffed Rice', 12.00, '' );
 }
 
-function addOyster(){
+function addOysters() {
+	AddOrderToSession('Oysters', 'Seasoned Oyster with Lemon', 12.00, '');
+}
+
+function addSalmon(){
 	AddOrderToSession('Salmon', 'Raw Salmon with Lemon and Slices of Onion', '$12.00' );
 }
 
-function addSalmon() {
+function addFriedOctopus() {
 	AddOrderToSession('Fried Octopus', 'Octopus that is breaded and fried to a nice golden brown', 12.00, '');	
 }
 
@@ -160,8 +169,13 @@ function addRedandBlueFruitIcecreamCake() {
 
 function addCaramelChocolateSunday() {
 	AddOrderToSession('Caramel Chocolate Sunday', 'Cold Icecream Sprinkle with Nuts', 10.00, '');
+	totalOrderCount();
 }
+//document.getElementById("total").innerHTML = 10;
 
+function printOrder() {
+	document.getElementById("everything").innerHTML = sessionStorage.getItem("itemName");
+}
 
 
 
