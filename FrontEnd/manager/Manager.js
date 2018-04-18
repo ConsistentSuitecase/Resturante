@@ -4,7 +4,7 @@ function check(){
 		$.each(data, function(key,party)
 		{
 			var j= party.p_Table-1000;
-
+			
 			if(party.p_WaiterID == 1000)
 			{
 				if(party.p_hasOrdered)

@@ -5,6 +5,29 @@ $(document).ready(function(){
 });
 var totalOrder = 0;
 
+//My Edit
+function printlist()
+{
+	var active_orders=[];
+	$.get('http://localhost:443/api/parties',function(data){
+		$.each(data, function(key,party){
+			//console.log(party);
+			$.each(party.p_Orders.orders,function(key,order){
+				console.log(order.itemName);
+				//if (list is empty)
+				if(order.itemName!=undefined)
+				{
+					let output = '<div id="cart" class="ordercontent">';					
+					output += '<p>'+ order.itemName +': </p>';
+					output += '</div>';
+					$('#'+party.p_Table).html(output);
+
+				}			
+			});
+
+		});
+	});
+}
 
 function test(e){
 	console.log('test function');
