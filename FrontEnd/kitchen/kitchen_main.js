@@ -16,12 +16,6 @@ function getOrders()
 =======
 	var active_orders=[];
 	$.get('http://localhost:443/api/parties',function(data){
-<<<<<<< HEAD
-			$.each(data, function(key,party){
-				console.log(party.p_Orders);
-				
-							
-=======
 		$.each(data, function(key,party){
 			//console.log(party);
 			$.each(party.p_Orders.orders,function(key,order){
@@ -40,24 +34,16 @@ function getOrders()
 			output += '</div>';
 			$('#cardb1').html(output);
 			*/
->>>>>>> 1964640f07eb4dc870b5c4608e8e2023a4733a2f
 				//if table.exists
-   				$.each(party.p_Orders,function(key,order){
-				//console.log('test: Stepped into order list');
+//				$.each(party.orders,function(key,order){
+//					console.log('test: Stepped into order list');
 
-					if(order.complete==false)
+
+					/*if(order.complete==false)
 					{
-<<<<<<< HEAD
-						console.log("appended");
-						active_orders.append(JSON.parse(orders));
-					}
-				});
-				
-=======
 						active_orders.append(JSON.parse(order));
 					}*/
 //				});
->>>>>>> 1964640f07eb4dc870b5c4608e8e2023a4733a2f
 
 
 });
@@ -78,13 +64,7 @@ function getOrders()
 =======
 
 	//console.log(party.p_Orders);
-	$.each(active_orders, function(key,order)
-	{
-		let output = '<div class ="card" id="body">';
-		output += '<p>'+ active_orders.Name[0] +'</p>';
-		output += '</div>';
-		$('#cardb1').html(output);
-	});
+
 
 >>>>>>> 1964640f07eb4dc870b5c4608e8e2023a4733a2f
 

@@ -1,0 +1,143 @@
+<!--stuff i did
+-i added w3 link to help move the boxes around
+-removed all buttons, but one to convert into "report"
+-shifted "report to the center at the very bottom"
+-add box to each box/waitstaff (above the breaks<br>)
+-->
+<!--stuff to do
+-link sales and popularity to "report"
+-dynamic light to react in 4 colors: green, orange, red and white(hex code in ws' name)
+ - the rectangles have id, so we may need to use em
+ - receive status from customer
+  -Green=Good
+  -Orange=Refill
+  -Red=Help
+  -White=Empty Table
+  -Should start off white
+-dynamic name in box when they log in
+ - probably need to id card-header
+ - Receive staff's name from waitstaff interface
+-Check status every # seconds
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Manager Interface</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--w3.css for shifting stuff around-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Custom styles for this template -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+  </head>
+  
+   <style>
+    .card-footer
+    {
+    	background-color: #DCDCDC;
+    }
+	#stat1
+	{
+	  height: 40px;
+	  width: 100px;
+	  background-color: #FF0000;
+	}
+	#stat2
+	{
+	  height: 40px;
+	  width: 100px;
+	  background-color: #FFA500;
+	}
+	#stat3
+	{
+	  height: 40px;
+	  width: 100px;
+	  background-color: #008000;
+	}
+	#stat4
+	{
+	  height: 40px;
+	  width: 100px;
+	  background-color: #FFFFFF;
+	}	
+	#report 
+	{
+	    position:absolute;
+	    transition: .5s ease;
+	    top: 75%;
+	    left: 46%;
+	}
+  </style>
+  <!--manuever report to center bottom, and adjust wsL and wsR-->
+
+  <body>
+    <!-- Page Content -->
+    <div class="container">
+      <!-- Marketing Icons Section -->
+      <div class="row">
+        <div class="col-lg-4 mb-4 w3-display-topleft">
+          <div class="card h-100">
+            <h4 id="ws1" class="card-header">FF0000=red</h4>
+            <div class="card-footer">
+             <div id="stat1" class="rectangle w3-display-middle"></div>         
+             <p><br><br><br><br><br><br><br><br></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4 w3-display-topright"">
+          <div class="card h-100">
+            <h4 id="ws2" class="card-header">FFA500=orange</h4>
+            <div class="card-footer">
+             <div id="stat2" class="rectangle w3-display-middle"></div>            	
+             <p><br><br><br><br><br><br><br><br></p>            
+            </div>
+          </div>
+        </div>
+    </div>
+    <a id="report" href="report.html" class="btn btn-primary">Report</a>
+<!--add function to this?-->
+
+      <div class="row">
+        <div class="col-lg-4 mb-4 w3-display-bottomleft"">
+          <div class="card h-100">
+            <h4 id="ws3" class="card-header">008000=green</h4>
+            <div class="card-footer">
+             <div id="stat3" class="rectangle w3-display-middle"></div>            	
+             <p><br><br><br><br><br><br><br><br></p>
+            </div>
+          </div>
+        </div>
+
+      <div class="col-lg-4 mb-4 w3-display-bottomright">
+        <div class="card h-100">
+            <h4 id="ws4" class="card-header">FFFFFF=white</h4>
+            <div class="card-footer">
+             <div id="stat4" class="rectangle w3-display-middle"></div>            	
+             <p><br><br><br><br><br><br><br><br></p>            
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script scr="manager.js"></script>
+
+  <script>
+    
+  </script>
+
+  </body>
+
+</html>
