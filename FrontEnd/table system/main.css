@@ -126,7 +126,7 @@ background-position: center;
 
 .shirt-list{
 	position: fixed;
-	
+	align-content: center;
 	right: 0;
 	margin: 0;
 	width: 60%;
