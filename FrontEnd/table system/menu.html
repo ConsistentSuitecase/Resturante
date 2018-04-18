@@ -1,0 +1,398 @@
+<!doctype html>
+<html>
+<head>
+	<title>Menu</title>
+	<script
+	src="https://code.jquery.com/jquery-3.2.1.js"
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<script src="menu_js.js"></script>
+
+</head>
+<body>
+	<div class="helpBar">
+		<button class="button">Call Server</button>
+		<button class="button">Refill Drinks</button>
+		<a href="cart.html"><button class="button"><i class="fas fa-cart-plus" id="total"></i> </button></a>
+	</div>
+
+	<div class="tabbar">
+		<a href="main.html">EXIT</a>
+		<button class="tablinks" onclick="openMenu(event, 'drinks')" id="drink">DRINKS</button>
+		<button class="tablinks" onclick="openMenu(event, 'appitizers')">APPITIZERS</button>
+		<button class="tablinks" onclick="openMenu(event, 'entree')">ENTREES</button>
+		<button class="tablinks" onclick="openMenu(event, 'kidsMenu')">KIDS MENU</button>
+		<button class="tablinks" onclick="openMenu(event, 'desserts')">DESSERTS</button>
+		<h3 class="tnum">Table 16</h3>
+	</div>
+	
+	<div id="drinks" class="tabcontent">
+		<!-- Slide One - Set the background image for this slide in the line below -->
+		<div class="drinkbackground">
+			<img class="teaphoto" src="pictures/IMG_1754.jpg" alt="">
+			<div class="drink-list">
+				<form>
+					<ul class="fuckingworkpls">
+						<li class="alldrinks">
+							Sweet Tea
+							<select name="SweetTea">
+								<option value="0" selected>0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</li>
+						<li class="alldrinks">
+							Pepsi
+							<select name="Pepsi">
+								<option value="0" selected>0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</li>
+						<li class="alldrinks" >
+							Diet Pepsi
+							<select name="DietPepsi">
+								<option value="0" selected>0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</li>
+						<li class="alldrinks">
+							Sierra Mist
+							<select name="SierraMist">
+								<option value="0" selected>0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</li>
+						<li class="alldrinks">
+							Mountain Dew
+							<select name="MountainDew">
+								<option value="0" selected>0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</li>
+						<li class="alldrinks">
+							Dr. Pepper
+							<select name="DrPepper">
+								<option value="0" selected>0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</li>
+						<li class="alldrinks">
+							Water
+							<select name="water">
+								<option value="0" selected>0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</li>
+					</ul>
+					<input class="submit" type="submit">
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- Slide Two - Set the background image for this slide in the line below -->
+
+	
+	<div id="appitizers" class="tabcontent">
+		<div id="appitizersItem" class="carousel slide" data-ride="carousel" data-interval="false">
+			<ol class="carousel-indicators">
+				<li data-target="#appitizersItem" data-slide-to="0" class="active"></li>
+				<li data-target="#appitizersItem" data-slide-to="1"></li>
+				<li data-target="#appitizersItem" data-slide-to="2"></li>
+				<li data-target="#appitizersItem" data-slide-to="3"></li>
+				<li data-target="#appitizersItem" data-slide-to="4"></li> 
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<!-- Slide One - Set the background image for this slide in the line below -->
+				<div class="carousel-item active" style="background-image: url(pictures/lattucewrapes.png)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addThaiLettuceWraps()" type="button"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3 class="menuitem">Thai Lettuce Wraps</h3>
+						<p class="itemdescription">Wild Hog Wrapped in Bibb Lettuce, Pineapple and Cherry Tomato, Red Onion and Peanut Sauce, Puffed Rice</p>
+					</div>
+				</div>
+				<!-- Slide Two - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url(pictures/ousters.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addOysters()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>Second Slide</h3>
+						<p>This is a description for the second slide.</p>
+					</div>
+				</div>
+				<!-- Slide Three - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url(pictures/platter2.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addSalmon()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>Third Slide</h3>
+						<p>This is a description for the third slide.</p>
+					</div>
+				</div>
+				<!-- Slide Three - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url(pictures/calamari.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addFriedOctopus()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>Third Slide</h3>
+						<p>This is a description for the third slide.</p>
+					</div>
+				</div>
+				<!-- Slide Three - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url(pictures/shrimp.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addPlatter()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>Third Slide</h3>
+						<p>This is a description for the third slide.</p>
+					</div>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#appitizersItem" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#appitizersItem" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+
+	<div id="entree" class="tabcontent">
+		<div id="entreeItems" class="carousel slide" data-ride="carousel" data-interval="false">
+			<ol class="carousel-indicators" id ="dasds">
+				<li data-target="#entreeItems" data-slide-to="0" class="active"></li>
+				<li data-target="#entreeItems" data-slide-to="1"></li>
+				<li data-target="#entreeItems" data-slide-to="2"></li>
+				<li data-target="#entreeItems" data-slide-to="3"></li>
+				<li data-target="#entreeItems" data-slide-to="4"></li>
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<!-- Slide One - Set the background image for this slide in the line below -->
+				<div class="carousel-item active" style="background-image: url(pictures/salmon.png)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addBourbonSalmon()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$28.00</h5>
+						<h3 class="menuitem">Bourbon Salmon</h3>
+						<p>Atlantic Salmon Filet Char Grilled, Bourbon Barbeque Sauce, Asparagus, Quinoa Rice</p>
+					</div>
+				</div>
+				<!-- Slide Two - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url(pictures/fishandchips.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addFriedCatfish()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>Second Slide</h3>
+						<p>This is a description for the second slide.</p>
+					</div>
+				</div>
+				<!-- Slide Three - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url(pictures/burger.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addAngusBurger()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>Third Slide</h3>
+						<p>This is a description for the third slide.</p>
+					</div>
+				</div>
+				<!-- Slide Three - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url(pictures/pasta.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addSeaFoodPasta()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>Third Slide</h3>
+						<p>This is a description for the third slide.</p>
+					</div>
+				</div>
+				<!-- Slide Three - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url(pictures/crab.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addKingCrab()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>Third Slide</h3>
+						<p>This is a description for the third slide.</p>
+					</div>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#entreeItems" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#entreeItems" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	
+	<div id="desserts" class="tabcontent">
+		<div id="dessertItems" class="carousel slide" data-ride="carousel" data-interval="false">
+			<ol class="carousel-indicators">
+				<li data-target="#dessertItems" data-slide-to="0" class="active"></li>
+				<li data-target="#dessertItems" data-slide-to="1"></li>
+				<li data-target="#dessertItems" data-slide-to="2"></li>	  
+				<li data-target="#dessertItems" data-slide-to="3"></li>	  
+				<li data-target="#dessertItems" data-slide-to="4"></li>
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<!-- Slide One - Set the background image for this slide in the line below -->
+				<div class="carousel-item active" style="background-image: url(pictures/chocolatecake.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addChocolateMouseCake()"><i class="fas fa-cart-plus"></i> Add to Order</button>			
+						<h5 class="price">$8.00</h5>
+						<h3 class="menuitem">Chocolate Mouse Cake</h3>
+						<p>This is a description for the third slide.</p>
+					</div>
+				</div>
+				<!-- Slide Two - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url(pictures/rwb.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addFamousAmericanJelloShot()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>Second Slide</h3>
+						<p>This is a description for the second slide.</p>
+					</div>
+				</div>
+				<!-- Slide Three - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url(pictures/banana.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addCaramelCheesecake()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>Third Slide</h3>
+						<p>This is a description for the third slide.</p>
+					</div>
+				</div>		
+				<!-- Slide Three - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url(pictures/cake.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addRedandBlueFruitIcecreamCake()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>Third Slide</h3>
+						<p>This is a description for the third slide.</p>
+					</div>
+				</div>		
+				<!-- Slide Three - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url(pictures/icecream.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addCaramelChocolateSunday()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>Third Slide</h3>
+						<p>This is a description for the third slide.</p>
+					</div>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#dessertItems" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#dessertItems" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	
+	<div id="kidsMenu" class="tabcontent">
+		<div id="kidsMenuItems" class="carousel slide" data-ride="carousel" data-interval="false">
+			<ol class="carousel-indicators">
+				<li data-target="#kidsMenuItems" data-slide-to="0" class="active"></li>
+				<li data-target="#kidsMenuItems" data-slide-to="1"></li>
+				<li data-target="#kidsMenuItems" data-slide-to="2"></li>
+				<li data-target="#kidsMenuItems" data-slide-to="3"></li>
+				<li data-target="#kidsMenuItems" data-slide-to="4"></li>
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<!-- Slide One - Set the background image for this slide in the line below -->
+				<div class="carousel-item active" style="background-image: url(pictures/kidschick.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addChicken()" type="button"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>First Slide</h3>
+						<p>This is a description for the first slide.</p>
+					</div>
+				</div>
+				<!-- Slide Two - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url(pictures/sliders.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addSliders()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>Second Slide</h3>
+						<p>This is a description for the second slide.</p>
+					</div>
+				</div>
+				<!-- Slide Three - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url(pictures/kidschees.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addGrilledCheese()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>Third Slide</h3>
+						<p>This is a description for the third slide.</p>
+					</div>
+				</div>
+				<!-- Slide Three - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url(pictures/kids-shrimp-plate.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addMiniFriedShrimp()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>Third Slide</h3>
+						<p>This is a description for the third slide.</p>
+					</div>
+				</div>
+				<!-- Slide Three - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url(pictures/kid-s-shrimp-tacos.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<button class="orderbutton" onclick="addSeaFoodTacos()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<h5 class="price">$12.00</h5>
+						<h3>Third Slide</h3>
+						<p>This is a description for the third slide.</p>
+					</div>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#kidsMenuItems" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#kidsMenuItems" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	
+	<script src="tabs.js"></script>
+	<script>
+		document.getElementById("drink").click()
+	</script>
+
+</body>
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous">
+</script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</html>
