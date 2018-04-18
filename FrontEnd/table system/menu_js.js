@@ -3,7 +3,7 @@ $(document).ready(function(){
 	displayCart();
 	$('#btn_placeOrder').click(sendOrders);
 	$('#btn_DisplayOrdered').click(displayOrderedFood);
-
+	$('#btn_buyShirt').click(buyShirt);
 	//$('#kidschicken').click(kidsChick);
 });
 var totalOrderCount = 0;
@@ -95,6 +95,11 @@ function test(e){
 	}
 
 
+function buyShirt(e){
+	alert('buying shirt');
+		AddOrderToSession('T-Shirt', 'beautiful, Professional shirt', .25, '' );
+
+}
 //get active table
 function sendOrders(e){
 	//probably dynamically assign this number later
