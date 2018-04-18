@@ -1,58 +1,64 @@
-<!doctype html>
+<!--
+@written by: Captain MAD (www.madcoder.me)
+-->
+<!DOCTYPE>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Waitstaff</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="css/modern-business.css" rel="stylesheet">
-<!-- <meta charset="utf-8">
-<title>Untitled Document</title>
-	<link rel="stylesheet" type="text/css" href="main.css">
-	<script src="tabs.js"></script> -->
+    <meta charset="utf8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Demo of Tic-Tac-Toe Game written in Javascript </title>
+    <link rel="stylesheet" type="text/css" href="app.css" />
 </head>
 
 <body>
-  <!-- <div class="col-lg-12"> -->
-    <div class="row">
-      <div class="col-xs-4">
-        <a href="dino.html" class="btn btn-info" role="button">dino game</a>
-        <!-- <button href="dino.html" class="btn btn-primary btn-xs" type="button">Dino Game</button> -->
-      </div>
-      <div class="col-xs-4">
-        <a href="pappu-pakia-master/flappy.htm" clas="btn btn-info" role="button">flappy game</a>
-        <!-- <button href="flappy.html" class="btn btn-primary btn-xs" type="button">flappy game</button> -->
-      </div>
+
+
+
+
+    <div class="game-panel">
+
+        <div class="tic-tac-toe">
+            <table class="scoreboard">
+                <tr>
+                    <td> Player 1 </td>
+                    <td width="30"> &nbsp; </td>
+                    <td> Player 2 </td>
+                </tr>
+                <tr>
+                    <td class="score X">
+                        0
+                    </td>
+                    <td> &nbsp; </td>
+                    <td class="score O">
+                        0
+                    </td>
+                </tr>
+            </table>
+
+            <div class="board"></div>
+
+            <button class="btn-reset"> Reset </button>
+
+            <select class="grid-options">
+                <option value="3" selected> 3 X 3 </option> 
+            </select>
+            <a href="main.html"><button class="gameExit">Exit</button></a>
+        </div>
+       
+
     </div>
-  <!-- </div> -->
-	<!-- Tab links -->
-<!-- <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-</div> -->
 
-<!-- Tab content -->
-<!-- <div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-</div>
+    <script src="TicTacToe.js"></script>
+    <script>
+        TicTacToe('.game-panel');
+    </script>
 
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
-</div>
+    <!-- Not related to demo -->
+    <script src="http://www.madcoder.me/demos/demos.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.madcoder.me/demos/demos.css" />
 
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div> -->
 </body>
+
 </html>
