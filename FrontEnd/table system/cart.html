@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	<title>Chart</title>
+	<script
+	src="https://code.jquery.com/jquery-3.2.1.js"
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<script src="tabs.js"></script>
+	<script src="menu_js.js"></script>
+
+</head>	
+<body>
+	<div class="orderBar">
+		<button class="tablinks" onclick="openOrder(event, 'cart')" id="drink">CART</button>
+		<button class="tablinks" onclick="openOrder(event, 'sentOrders')">SENT ORDERS</button>
+		
+		<div id="cart" class="ordercontent">
+			
+		</div>
+		
+		<div id="sentOrders" class="ordercontent">
+			
+		</div>
+
+	</div>
+	
+	
+	<div class="add-placeOrder">
+		<button class="placebutton">Add More</button></a>
+		<button class="placebutton" id="btn_placeOrder">Place Order</button></a>
+	</div>
+
+	
+	<div class="bottomNavBar">
+		<ul class="links">
+			<li><a href="main.html">EXIT</a></li>
+			<li class="tnum">Table 16</li>
+		</ul>
+	</div>
+	
+	<script src="tabs.js"></script>
+	<script>
+		document.getElementById("drink").click()
+	</script>
+	<script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	
+	
+</body>
+</html>
