@@ -321,97 +321,97 @@ function totalOrderCount() {
 }
 //Appatizers
 function addThaiLettuceWraps(){
-	AddOrderToSession('Thai Lettus Wraps', 'Wild Hog Wrapped in Bibb Lettuce, Pineapple & Cherry Tomato, Red Onion & Peanut Sauce, Puffed Rice', 12.00, '' );
+	AddOrderToSession('Thai Lettus Wraps', 'Wild Hog Wrapped in Bibb Lettuce, Pineapple & Cherry Tomato, Red Onion & Peanut Sauce, Puffed Rice', 12.00, '' , 'Appatizers');
 }
 
 function addCoke(){
-	AddOrderToSession('coke', 'like santa', 1.50, '' );
+	AddOrderToSession('coke', 'like santa', 1.50, '' ,'drink');
 }
 
 function addTea(){
-	AddOrderToSession('tea', 'SONG O THE SOUTH', 1.50, '' );
+	AddOrderToSession('tea', 'SONG O THE SOUTH', 1.50, '' , 'drink');
 }
 
 function addWater(){
-	AddOrderToSession('water', 'sweet and real', 11.50, '' );
+	AddOrderToSession('water', 'sweet and real', 11.50, '', 'drink');
 }
 
 
 function addOysters() {
-	AddOrderToSession('Oysters', 'Seasoned Oyster with Lemon', 12.00, '');
+	AddOrderToSession('Oysters', 'Seasoned Oyster with Lemon', 12.00, '', 'Appatizers');
 }
 
 function addSalmon(){
-	AddOrderToSession('Salmon', 'Raw Salmon with Lemon and Slices of Onion', '$12.00' );
+	AddOrderToSession('Salmon', 'Raw Salmon with Lemon and Slices of Onion', '$12.00' , 'Appatizers');
 }
 
 function addFriedOctopus() {
-	AddOrderToSession('Fried Octopus', 'Octopus that is breaded and fried to a nice golden brown', 12.00, '');	
+	AddOrderToSession('Fried Octopus', 'Octopus that is breaded and fried to a nice golden brown', 12.00, '', 'Appatizers');	
 }
 
 function addPlatter() {
-	AddOrderToSession('Platter', 'Fried shrimp, Octopus, and onion rings', 12.00, '');
+	AddOrderToSession('Platter', 'Fried shrimp, Octopus, and onion rings', 12.00, '', 'Appatizers');
 }
 //Entrees
 function addBourbonSalmon() {
-	AddOrderToSession('Bourbon Salmon', 'Atlantic Salmon Filet Char Grilled, Bourbon Barbeque Sauce, Asparagus, Quinoa Rice', 28.00, '');	
+	AddOrderToSession('Bourbon Salmon', 'Atlantic Salmon Filet Char Grilled, Bourbon Barbeque Sauce, Asparagus, Quinoa Rice', 28.00, '', 'Entrees');	
 }
 
 function addFriedCatfish(){
-	AddOrderToSession('Fried Catfish', 'Fried Catfish served with Fries, Tartar Sauce, and Salad', 28.00, '');
+	AddOrderToSession('Fried Catfish', 'Fried Catfish served with Fries, Tartar Sauce, and Salad', 28.00, '', 'Entrees');
 }
 
 function addAngusBurger() {
-	AddOrderToSession('Angus Burger', 'Grilled Angus Beef with Onions, Lettuce, Tomatoes, and Pickles, served with Fries', 28.00, '');
+	AddOrderToSession('Angus Burger', 'Grilled Angus Beef with Onions, Lettuce, Tomatoes, and Pickles, served with Fries', 28.00, '', 'Entrees');
 }
 
 function addSeaFoodPasta() {
-	AddOrderToSession('SeaFood Pasta', 'Seasoned Pasta with Fried Shrimps with Lemon and Parmesean', 28.00, '');
+	AddOrderToSession('SeaFood Pasta', 'Seasoned Pasta with Fried Shrimps with Lemon and Parmesean', 28.00, '', 'Entrees');
 }
 
 function addKingCrab() {
-	AddOrderToSession('King Crab','Huge Boiled King Crab with sauce', 28.00,'');
+	AddOrderToSession('King Crab','Huge Boiled King Crab with sauce', 28.00,'', 'Entrees');
 }
 //Kids Menu
 function addChicken(){
 	//pull from table
-	AddOrderToSession('Chicken Tendors','"Three chicken tendors"',10.00,'');
+	AddOrderToSession('Chicken Tendors','"Three chicken tendors"',10.00,'', 'kids');
 }
 
 function addSliders() {
-	AddOrderToSession('Sliders', 'Three Sliders', 11.00, '');
+	AddOrderToSession('Sliders', 'Three Sliders', 11.00, '', 'kids');
 }
 
 function addGrilledCheese() {
-	AddOrderToSession('Grilled Cheese Sandwich', 'Four Grilled Cheese Sandwich served with Apple Slices', 10.00, '');
+	AddOrderToSession('Grilled Cheese Sandwich', 'Four Grilled Cheese Sandwich served with Apple Slices', 10.00, '', 'kids');
 }
 
 function addMiniFriedShrimp() {
-	AddOrderToSession('Mini Fried Shrimps', 'Fried Shrimps with Brocoli and a Biscuit', 11.00, '');
+	AddOrderToSession('Mini Fried Shrimps', 'Fried Shrimps with Brocoli and a Biscuit', 11.00, '', 'kids');
 }
 
 function addSeaFoodTacos() {
-	AddOrderToSession('SeaFood Tacos', 'Two Tacos with Shrimps and Fruits', 10.00, '');
+	AddOrderToSession('SeaFood Tacos', 'Two Tacos with Shrimps and Fruits', 10.00, '', 'kids');
 }
 //Desserts
 function addChocolateMouseCake() {
-	AddOrderToSession('Chocolate Mouse Cake', 'Creamy Chocolate Cake', 10.00, '');
+	AddOrderToSession('Chocolate Mouse Cake', 'Creamy Chocolate Cake', 10.00, '', 'desserts');
 }
 
 function addFamousAmericanJelloShot() {
-	AddOrderToSession('Famous American Jello Shot', 'Red, White, and Blue Jello with a shot of Whip Cream', 10.00, '');
+	AddOrderToSession('Famous American Jello Shot', 'Red, White, and Blue Jello with a shot of Whip Cream', 10.00, '', 'desserts');
 }
 
 function addCaramelCheesecake() {
-	AddOrderToSession('Caramel Cheesecake', 'Drizzled Caramel with Whipped Cream and Hazzle Nut Toppings', 10.00, '');
+	AddOrderToSession('Caramel Cheesecake', 'Drizzled Caramel with Whipped Cream and Hazzle Nut Toppings', 10.00, '', 'desserts');
 }
 
 function addRedandBlueFruitIcecreamCake() {
-	AddOrderToSession('Red and Blue Fruit Icecream Cake', 'Raseberry and Blueberry Icecream Cake', 10.00, '');
+	AddOrderToSession('Red and Blue Fruit Icecream Cake', 'Raseberry and Blueberry Icecream Cake', 10.00, '', 'desserts');
 }
 
 function addCaramelChocolateSunday() {
-	AddOrderToSession('Caramel Chocolate Sunday', 'Cold Icecream Sprinkle with Nuts', 10.00, '');
+	AddOrderToSession('Caramel Chocolate Sunday', 'Cold Icecream Sprinkle with Nuts', 10.00, '', 'desserts');
 	totalOrderCount();
 }
 //document.getElementById("total").innerHTML = 10;
