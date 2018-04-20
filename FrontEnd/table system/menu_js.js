@@ -168,13 +168,13 @@ function test(e){
 		var tableNumber=1001;
 		$.get(url+'/api/parties',function(data){
 			$.each(data, function(key,party){
-
+				console.log(party);
 				if(party.p_Table==tableNumber){
 				//redner the food
 				
 				var totalCost=0;
 				let output='<ul>'
-
+				console.log(party.p_Orders);
 				for(var i=0;i<party.p_Orders.length;i++)
 				{
 					console.log(i);
@@ -312,8 +312,22 @@ function getOrders(){
 }
 
 
+//make kids food free
 function checkDate(orders){
-
+	
+	//get the day of the week
+	var a=new Date();
+	var day=a.getDay();
+	$.each(orders,function(key,order){
+		console.log(order);
+		//if its sunday
+		if(day==0 && order.itemType=='kids')
+		{
+			alert('food should be free');
+			order.itemPrice=0;
+		}
+	});
+	return orders;
 }
 function totalOrderCount() {
 	totalOrder++;
