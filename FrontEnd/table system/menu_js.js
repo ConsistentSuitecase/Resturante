@@ -49,7 +49,7 @@ function test(e){
 		$.each(data, function(key,party){
 			if(party.p_Table==tableNumber){
 				console.log(party);
-				$('#table_name').html('<h3>'+party.p_Name+'</h3>');
+				$('#table_name').html('<h3 class="tableName">'+party.p_Name+'</h3>');
 				
 			}
 		});
