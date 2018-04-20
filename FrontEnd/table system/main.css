@@ -443,6 +443,14 @@ p{
 	position: fixed;
 	right: 0;
 }
+
+.couponForm{
+	margin: 175px;
+	position: fixed;
+	right: 0;
+	float:left;
+}
+
 .split{
 	background-color: white;
 	width: 45%;
