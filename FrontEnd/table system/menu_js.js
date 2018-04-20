@@ -6,8 +6,8 @@ $(document).ready(function(){
 	$('#btn_buyShirt').click(buyShirt);
 	$('#btn_AddCoupon').click(activateCoupon);
 	$('#deals').click(deal);
-
-
+	$('#refill').click(refill);
+	$('#help2').click(help);
 	$('#btn_Coke').click(addCoke);
 	$('#btn_Tea').click(addTea);
 	$('#btn_Water').click(addWater);
@@ -16,6 +16,62 @@ $(document).ready(function(){
 });
 var totalOrderCount = 0;
 var totalOrder = 0;
+var url="http://localhost:443";
+function refill(){
+	var tableNumber = 1001;
+	$.get(url+'/api/parties',function(data){
+			$.each(data, function(key,party){
+				//var table_id = party.p_
+
+				if(party.p_Table==tableNumber){
+				console.log('updating refill');
+				$.ajax({
+					url:url+'/api/parties/updateDrinkStatus/'+party._id,
+					data: JSON.stringify({
+						"p_NeedsRefill":true
+					}),
+					type:'PUT',
+					contentType:'application/json',
+					success: function(data){
+						//window.location.href='host.html';
+					},
+					error:function(xhr ,status, err){
+						console.log(err);
+					}
+				});
+			}
+			
+		});
+		});
+}
+function help(){
+	var tableNumber = 1001;
+	console.log('is it working?');
+	$.get(url+'/api/parties',function(data){
+			$.each(data, function(key,party){
+				//var table_id = party.p_
+
+				if(party.p_Table==tableNumber){
+				console.log('updating help');
+				$.ajax({
+					url:url+'/api/parties/updateHelpStatus/'+party._id,
+					data: JSON.stringify({
+						"p_needHelp":true
+					}),
+					type:'PUT',
+					contentType:'application/json',
+					success: function(data){
+						//window.location.href='host.html';
+					},
+					error:function(xhr ,status, err){
+						console.log(err);
+					}
+				});
+			}
+			
+		});
+		});
+}
 function deal(){
 	window.confirm("do you want add drink and dessert for $3.50");
 	if(confirm)
@@ -140,7 +196,7 @@ function test(e){
 
 
 
-	var url="http://localhost:443"
+	var url="http://localhost:443";
 
 
 

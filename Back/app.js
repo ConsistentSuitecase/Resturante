@@ -207,6 +207,23 @@ app.put('/api/parties/updateDrinkStatus/:id', function(req, res, next){
 	})
 
 });
+app.put('/api/parties/updateDrink/:id', function(req, res, next){
+	//res.send('Update job '+req.params.id);
+	db.parties.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
+		$set:{
+
+			p_NeedsRefill:req.body.p_NeedsRefill
+		}
+	},new: false}, function(err,doc){
+		if(err)
+		{
+			res.send(err);
+		}
+		console.log('item modified');
+		res.json(doc);
+	})
+
+});
 
 //Update Help
 app.put('/api/parties/updateHelpStatus/:id', function(req, res, next){
@@ -214,9 +231,26 @@ app.put('/api/parties/updateHelpStatus/:id', function(req, res, next){
 	db.parties.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
 		$set:{
 
-			p_HelpStatus:req.body.p_HelpStatus
+			p_needHelp:req.body.p_needHelp
 		}
 	},new: true}, function(err,doc){
+		if(err)
+		{
+			res.send(err);
+		}
+		console.log('item modified');
+		res.json(doc);
+	})
+
+});
+app.put('/api/parties/updateHelpStatus2/:id', function(req, res, next){
+	//res.send('Update job '+req.params.id);
+	db.parties.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
+		$set:{
+
+			p_needHelp:req.body.p_needHelp
+		}
+	},new: false}, function(err,doc){
 		if(err)
 		{
 			res.send(err);
