@@ -108,7 +108,7 @@ function test(e){
 	$.get(url+'/api/parties',function(data){
 		$.each(data, function(key,party){
 			if(party.p_Table==tableNumber){
-				console.log(party);
+				//	console.log(party);
 				$('#table_name').html('<h3 class="tableName">'+party.p_Name+'</h3>');
 				
 			}
@@ -177,8 +177,32 @@ function test(e){
 
 
 	function buyShirt(e){
-		alert('buying shirt');
-		AddOrderToSession('T-Shirt', 'beautiful, Professional shirt', .25, '' );
+		//alert('buying shirt');
+		var tableNumber = 1001;
+		$.get(url+'/api/parties',function(data){
+			$.each(data, function(key,party){
+				if(party.p_Table == tableNumber){
+					var totalCost=10;
+					console.log(party.p_hasOrdered);
+					console.log(true);
+					if(party.p_hasOrdered == true)
+					{
+						console.log('yayyy');
+						//totalCost = .25;
+						AddOrderToSession('T-Shirt', 'beautiful, Professional shirt', .25, '' );
+
+					}
+					else if(party.p_hasOrdered == false)
+					{
+						console.log('ahhhh');
+						AddOrderToSession('T-Shirt', 'beautiful, Professional shirt', 10, '' );
+					}
+			
+			//}
+				}
+			});
+		});
+		//AddOrderToSession('T-Shirt', 'beautiful, Professional shirt', .25, '' );
 
 	}
 //get active table
@@ -395,6 +419,10 @@ function AddOrderToSession( name,  desc,  price,  comment) {
 	console.log(sessionStorage.getItem('orders'));
 }
 
+
+function myFunction() {
+    alert("Hello! I am an alert box!");
+}
 /*
    function kidsChick() {
     if(typeof(Storage) !== "undefined") {
