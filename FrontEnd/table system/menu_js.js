@@ -7,6 +7,11 @@ $(document).ready(function(){
 	$('#btn_AddCoupon').click(activateCoupon);
 	$('#deals').click(deal);
 
+
+	$('#btn_Coke').click(addCoke);
+	$('#btn_Tea').click(addTea);
+	$('#btn_Water').click(addWater);
+
 	//$('#kidschicken').click(kidsChick);
 });
 var totalOrderCount = 0;
@@ -311,6 +316,19 @@ function addThaiLettuceWraps(){
 	AddOrderToSession('Thai Lettus Wraps', 'Wild Hog Wrapped in Bibb Lettuce, Pineapple & Cherry Tomato, Red Onion & Peanut Sauce, Puffed Rice', 12.00, '' );
 }
 
+function addCoke(){
+	AddOrderToSession('coke', 'like santa', 1.50, '' );
+}
+
+function addTea(){
+	AddOrderToSession('tea', 'SONG O THE SOUTH', 1.50, '' );
+}
+
+function addWater(){
+	AddOrderToSession('water', 'sweet and real', 11.50, '' );
+}
+
+
 function addOysters() {
 	AddOrderToSession('Oysters', 'Seasoned Oyster with Lemon', 12.00, '');
 }
@@ -413,6 +431,10 @@ function AddOrderToSession( name,  desc,  price,  comment) {
 	console.log(sessionStorage.getItem('orders'));
 }
 
+
+function myFunction() {
+    alert("Hello! I am an alert box!");
+}
 /*
    function kidsChick() {
     if(typeof(Storage) !== "undefined") {
