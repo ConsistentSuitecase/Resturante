@@ -34,14 +34,14 @@ li a {
     text-decoration: none;	
 }
 
-.tnum{
+.tableName{
 	float: right;
 	display: block;
     color: white;
-    text-align: center;
+    
 	padding: 14px 14px;
     text-decoration: none;
-	width: 10%;
+	width: 15%;
 	font-size: 14px;
 	
 }
@@ -213,11 +213,12 @@ p{
     border: none;
     outline: none;
     cursor: pointer;
+    align-content: center;
     padding: 14px 16px;
     transition: 0.3s;
 	color:white;
 	text-size: 14px;
-	width: 12%;
+	width: 11%;
 }
 
 .tabbar a{
