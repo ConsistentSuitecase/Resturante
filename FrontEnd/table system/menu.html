@@ -14,8 +14,8 @@
 </head>
 <body>
 	<div class="helpBar">
-		<button class="button">Call Server</button>
-		<button class="button">Refill Drinks</button>
+		<button id="help2" class="button">Call Server</button>
+		<button id="refill" class="button">Refill Drinks</button>
 		<a href="cart.html"><button class="button"><i class="fas fa-cart-plus" id="total"></i> </button></a>
 	</div>
 
@@ -35,7 +35,7 @@
 		<div class="drinkbackground">
 			<img class="teaphoto" src="pictures/IMG_1754.jpg" alt="">
 			<div class="drink-list">
-				<form>
+				<!-- <form>
 					<ul class="fuckingworkpls">
 						<li class="alldrinks">
 							Sweet Tea
@@ -109,7 +109,10 @@
 						</li>
 					</ul>
 					<input class="submit" type="submit">
-				</form>
+				</form> -->
+				<button class='button' id='btn_Coke'>Coke</button>
+				<button class='button' id='btn_Tea'>Tea</button>
+				<button class='button' id='btn_Water'>Water</button>
 			</div>
 		</div>
 	</div>
@@ -214,7 +217,7 @@
 				<!-- Slide One - Set the background image for this slide in the line below -->
 				<div class="carousel-item active" style="background-image: url(pictures/salmon.png)">
 					<div class="carousel-caption d-none d-md-block">
-						<button class="orderbutton" onclick="addBourbonSalmon()"><i class="fas fa-cart-plus"></i> Add to Order</button>
+						<button id="deals" class="orderbutton" onclick="addBourbonSalmon()"><i class="fas fa-cart-plus"></i> Add to Order</button>
 						<h5 class="price">$28.00</h5>
 						<h3 class="menuitem">Bourbon Salmon</h3>
 						<p>Atlantic Salmon Filet Char Grilled, Bourbon Barbeque Sauce, Asparagus, Quinoa Rice</p>
