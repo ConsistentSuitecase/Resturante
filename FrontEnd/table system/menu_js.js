@@ -514,7 +514,7 @@ function AddOrderToSession( name,  desc,  price,  comment, type) {
 	console.log(sessionStorage.getItem('orders'));
 }
 var hasplayed = localStorage.setItem('hasplayed', false);
-var hasplayed = localStorage.setItem('played', false);
+var played = localStorage.setItem('played', false);
 
 function raffle(){
 var rand = getRandomInt(1,100);
