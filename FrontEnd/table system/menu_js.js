@@ -128,12 +128,16 @@ function activateCoupon(){
 				var prev=false;
 				$.each(party.p_Orders,function(key,order){					
 					
-					if(prev==true){
+					if(order.itemType=='Entrees' && prev==false){
 						//send this to the api somehow
-						order.itemPrice=0;
+						console.log('Found an entree')
+						prev=true;
 					}
-					//if order.itemType=='entree'
-					prev=true;
+					else if(order.itemType=='Entrees' && prev==true){
+						prev=false;
+						order.itemPrice=0;
+						console.log('found two entrees')
+					}
 				});
 				//weee
 				console.log('updating order');
