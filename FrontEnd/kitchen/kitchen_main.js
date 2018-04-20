@@ -16,44 +16,27 @@ function getOrders()
 
 					if(party.p_isComplete == false)
 					{
-					let output = '<div';
+						let output = '<div';
 
-<<<<<<< Updated upstream
-					for(var i=0;i<party.p_Orders.length;i++)
-=======
-				//if table.exists
-				$.each(party.orders,function(key,order){
-					console.log('test: Stepped into order list');
-					if(order.Complete==false)
->>>>>>> Stashed changes
-					{
-						console.log(i);
-						output+='<p> '+party.p_Orders[i].itemName+' </p>';
-					}
+						for(var i=0;i<party.p_Orders.length;i++)
+						{
+							console.log(i);
+							output+='<p> '+party.p_Orders[i].itemName+' </p>';
+						}
 
-					output += '</div>';
-					console.log(party.p_Table);
-					$('#'+party.p_Table).html(output);
-			//});
+						output += '</div>';
+						console.log(party.p_Table);
+						$('#'+party.p_Table).html(output);
+						
 					}
-<<<<<<< Updated upstream
 			setTimeout(getOrders, 6000);
 
-});
-=======
-				});
->>>>>>> Stashed changes
+		});
 
 	});
-
-<<<<<<< Updated upstream
-	//console.log(party.p_Orders);
-
-
-
-
-
 }
+
+
 
 function clearScreen_1(e)
 {
