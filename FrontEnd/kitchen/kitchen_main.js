@@ -10,16 +10,21 @@ function getOrders()
 	$.get('http://localhost:443/api/parties',function(data){
 		$.each(data, function(key,party){
 			//console.log(party);
-			$.each(party.p_Orders.orders,function(key,order){
-				console.log(order.itemName);
-				if(order.itemName!=undefined)
-				{
+							//console.log(orders.itemName);
+
 					let output = '<div class ="card" id="body">';
-					output += '<p>'+ order.itemName +'</p>';
-					output += '</div>';
-					$('#'+party.p_Table).html(output);
+
+				for(var i=0;i<party.p_Orders.length;i++)
+				{
+					console.log(i);
+					output+='<p> '+party.p_Orders[i].itemName+' </p>';
 				}
-			});
+
+					output += '</div>';
+					console.log(party.p_Table);
+					$('#'+party.p_Table).html(output);
+			
+		
 
 
 });

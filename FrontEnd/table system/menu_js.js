@@ -12,25 +12,30 @@ var totalOrder = 0;
 //My Edit
 function printlist()
 {
-	var active_orders=[];
-	$.get('http://localhost:443/api/parties',function(data){
-		$.each(data, function(key,party){
-			//console.log(party);
-			$.each(party.p_Orders.orders,function(key,order){
-				console.log(order.itemName);
-				//if (list is empty)
-				if(order.itemName!=undefined)
-				{
-					let output = '<div id="cart" class="ordercontent">';					
-					output += '<p>'+ order.itemName +': </p>';
-					output += '</div>';
-					$('#'+party.p_Table).html(output);
+	console.log('printList');
+	var tableNumber=1001;
+		$.get(url+'/api/parties',function(data){
+			$.each(data, function(key,party){
 
-				}			
-			});
+				if(party.p_Table==tableNumber){
+				//redner the food
+				
+				var totalCost=0;
+				let output='<ul>';
 
+				$.each(data,function(key,order){					
+					output+='<li>'+order.itemName+'   $'+order.itemPrice+'</li>';
+					totalCost+=order.itemPrice;
+				});
+
+				output+='<li> Total Price of all ordered items: '+totalCost+'</li>';
+				output+='</ul>';
+				$('#check').html(output);
+				return;
+				}
+			
 		});
-	});
+		});
 }
 
 
