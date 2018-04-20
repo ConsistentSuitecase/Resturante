@@ -34,10 +34,12 @@
 			</div>
 		
 				<button class="full" onclick="openPay(event, 'pay')">pay full </button>
-				<form class="couponForm">
-					<input type="text" name="coupon"><br>
-					<button class="coupon">Add coupon</button>
-				</form>
+				<!--<form class="couponForm">-->
+					<div class="payment">
+					<input type="text" name="coupon" id='couponName'><br>
+					<button class="coupon" id='btn_AddCoupon'>Add coupon</button>
+					</div>
+				<!--</form>-->
 				<button class="split" onclick="openPay(event, 'splittab')">Split</button>
 		</div>
 		
