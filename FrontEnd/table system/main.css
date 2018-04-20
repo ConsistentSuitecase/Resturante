@@ -444,13 +444,6 @@ p{
 	right: 0;
 }
 
-.couponForm{
-	margin: 175px;
-	position: fixed;
-	right: 0;
-	float:left;
-}
-
 .split{
 	background-color: white;
 	width: 45%;
@@ -469,15 +462,8 @@ p{
 	position: fixed;
 }
 
-.payment{
-	position: fixed;
-	right: 0;
-	height: 90%;
-	width: 50%;
 
 
-	
-}
 .payOptions{
 	display: block;
 	margin: auto;
@@ -485,4 +471,11 @@ p{
 	height: 10%;
 	margin-top: 50px;
 	background-color: white;
+}
+
+.payment{
+	position: fixed;
+	margin: 175px;
+	
+	right: 0;
 }
