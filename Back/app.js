@@ -246,7 +246,23 @@ app.put('/api/parties/updateSeatedStatus/:id', function(req, res, next){
 	})
 
 });
+app.put('/api/parties/updateHasOrdered/:id', function(req, res, next){
+	//res.send('Update job '+req.params.id);
+	db.parties.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
+		$set:{
 
+			p_hasOrdered:req.body.p_hasOrdered
+		}
+	},new: true}, function(err,doc){
+		if(err)
+		{
+			res.send(err);
+		}
+		console.log('item modified');
+		res.json(doc);
+	})
+
+});
 
 
 //Append items to the data object

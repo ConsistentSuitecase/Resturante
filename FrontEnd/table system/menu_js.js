@@ -178,6 +178,20 @@ function sendOrders(e){
 						console.log(err);
 					}
 				});
+				$.ajax({
+					url:url+'/api/parties/updateHasOrdered/'+table_id,
+					data: JSON.stringify({
+						"p_hasOrdered":true
+					}),
+					type:'PUT',
+					contentType:'application/json',
+					success: function(data){
+						//window.location.href='host.html';
+					},
+					error:function(xhr ,status, err){
+						console.log(err);
+					}
+				});
 			}
 		});
 	});
