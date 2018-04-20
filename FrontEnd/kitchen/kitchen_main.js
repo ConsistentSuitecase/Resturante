@@ -13,20 +13,21 @@ function getOrders()
 			//$.each(party.p_Orders, function(key,party){
 							//console.log(orders.itemName);
 
+
 					let output = '<div';
 
-				for(var i=0;i<party.p_Orders.length;i++)
-				{
-					console.log(i);
-					output+='<p> '+party.p_Orders[i].itemName+' </p>';
-				}
+					for(var i=0;i<party.p_Orders.length;i++)
+					{
+						console.log(i);
+						output+='<p> '+party.p_Orders[i].itemName+' </p>';
+					}
 
 					output += '</div>';
 					console.log(party.p_Table);
 					$('#'+party.p_Table).html(output);
 			//});
-		
-			//setTimeout(getOrders, 100000);
+			
+			setTimeout(getOrders, 5000);
 
 });
 
@@ -37,10 +38,12 @@ function getOrders()
 
 
 
+
 }
 
 function clearScreen_1()
 {
+
 	document.getElementById("1001").innerHTML = "";
 
 }
