@@ -5,12 +5,25 @@ $(document).ready(function(){
 	$('#btn_DisplayOrdered').click(displayOrderedFood);
 	$('#btn_buyShirt').click(buyShirt);
 	$('#btn_AddCoupon').click(activateCoupon);
+	$('#deals').click(deal);
 
 	//$('#kidschicken').click(kidsChick);
 });
 var totalOrderCount = 0;
 var totalOrder = 0;
+function deal(){
+	window.confirm("do you want add drink and dessert for $3.50");
+	if(confirm)
+	{
+		AddOrderToSession('special dessert', 'choco cake', 3.50, '' );
+		AddOrderToSession('special drink', 'drink', 0, '' );
+	}
+	else
+	{
 
+	}
+
+}
 //My Edit
 function printlist()
 {
@@ -21,7 +34,6 @@ function printlist()
 
 			if(party.p_Table==tableNumber){
 				//redner the food
-				
 				var totalCost=0;
 				let output='<ul>';
 
