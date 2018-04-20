@@ -513,18 +513,34 @@ function AddOrderToSession( name,  desc,  price,  comment, type) {
 	sessionStorage.setItem('orders',JSON.stringify(orders));
 	console.log(sessionStorage.getItem('orders'));
 }
-
+var hasplayed = localStorage.setItem('hasplayed', false);
+var hasplayed = localStorage.setItem('played', false);
 
 function raffle(){
 var rand = getRandomInt(1,100);
-if(rand < 21)
-	console.log("you won");
-else
-	console.log("you lost");
+var played = localStorage.getItem('played');
+var hasplayed = localStorage.getItem('hasplayed');
+	console.log(played);
+	console.log(hasplayed);
+	if(played == hasplayed){
+		if(rand < 21){
+			console.log("you won");
+			alert("Congratuations you won!\nShow this to the wait staff for your coupon!");
+			localStorage.setItem('hasplayed', true);
+		}
+		else{
+			console.log("you lost");
+			alert("Sorry you lost:'( \nBtter luck next time!");
+			localStorage.setItem('hasplayed', true);
+		}
+			console.log(hasplayed);
+			console.log(rand);
+		}
 
-	console.log(rand);
+	else{
+		alert("Sorry, only one chance peer table")
+	}
 }
-
 
 
 
