@@ -401,6 +401,10 @@ function AddOrderToSession( name,  desc,  price,  comment) {
 	console.log(sessionStorage.getItem('orders'));
 }
 
+
+function myFunction() {
+    alert("Hello! I am an alert box!");
+}
 /*
    function kidsChick() {
     if(typeof(Storage) !== "undefined") {
