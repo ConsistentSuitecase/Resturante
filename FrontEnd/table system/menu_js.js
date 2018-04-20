@@ -4,6 +4,8 @@ $(document).ready(function(){
 	$('#btn_placeOrder').click(sendOrders);
 	$('#btn_DisplayOrdered').click(displayOrderedFood);
 	$('#btn_buyShirt').click(buyShirt);
+	$('#btn_AddCoupon').click(activateCoupon);
+
 	//$('#kidschicken').click(kidsChick);
 });
 var totalOrderCount = 0;
@@ -14,16 +16,16 @@ function printlist()
 {
 	console.log('printList');
 	var tableNumber=1001;
-		$.get(url+'/api/parties',function(data){
-			$.each(data, function(key,party){
+	$.get(url+'/api/parties',function(data){
+		$.each(data, function(key,party){
 
-				if(party.p_Table==tableNumber){
+			if(party.p_Table==tableNumber){
 				//redner the food
 				
 				var totalCost=0;
 				let output='<ul>';
 
-				$.each(data,function(key,order){					
+				$.each(party.p_Orders,function(key,order){					
 					output+='<li>'+order.itemName+'   $'+order.itemPrice+'</li>';
 					totalCost+=order.itemPrice;
 				});
@@ -32,10 +34,58 @@ function printlist()
 				output+='</ul>';
 				$('#check').html(output);
 				return;
-				}
+			}
+			
+		});
+	});
+}
+
+function activateCoupon(){
+
+	var coupon=$('#couponName').val();
+	if(coupon=='bogo'){
+		//get the table
+		var tableNumber=1001;
+		$.get(url+'/api/parties',function(data){
+			$.each(data, function(key,party){
+
+				if(party.p_Table==tableNumber){
+				//redner the food
+				
+				var prev=false;
+				$.each(party.p_Orders,function(key,order){					
+					
+					if(prev==true){
+						//send this to the api somehow
+						order.itemPrice=0;
+					}
+					//if order.itemType=='entree'
+					prev=true;
+				});
+				//weee
+				console.log('updating order');
+				$.ajax({
+					url: url+'/api/party/logOrders/'+party._id,
+					data: JSON.stringify({
+						"p_Orders":party.p_Orders
+					}),
+					type:'PUT',
+					contentType:'application/json',
+					success: function(data){
+						//clear the local storage
+						console.log('it worked i guess')
+					},
+					error:function(xhr ,status, err){
+						console.log(err);
+					}
+				});
+			}
 			
 		});
 		});
+
+
+	}
 }
 
 

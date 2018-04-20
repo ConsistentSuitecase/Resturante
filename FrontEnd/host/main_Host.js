@@ -77,7 +77,9 @@ function addParty()
 			"p_Table":p_Table,
 			"p_isSeated":true,
 			"p_hasOrdered":false,
+			"p_needHelp": false,
 			"p_NeedsRefill":false,
+			"p_isComplete": false,
 			"p_Orders":'none',
 			"p_HasPaid":false
 
