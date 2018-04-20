@@ -12,11 +12,20 @@ function getOrders()
 			//console.log(party);
 			//$.each(party.p_Orders, function(key,party){
 							//console.log(orders.itemName);
+					console.log(party.p_isComplete);
 
-
+					if(party.p_isComplete == false)
+					{
 					let output = '<div';
 
+<<<<<<< Updated upstream
 					for(var i=0;i<party.p_Orders.length;i++)
+=======
+				//if table.exists
+				$.each(party.orders,function(key,order){
+					console.log('test: Stepped into order list');
+					if(order.Complete==false)
+>>>>>>> Stashed changes
 					{
 						console.log(i);
 						output+='<p> '+party.p_Orders[i].itemName+' </p>';
@@ -26,13 +35,18 @@ function getOrders()
 					console.log(party.p_Table);
 					$('#'+party.p_Table).html(output);
 			//});
-			
-			setTimeout(getOrders, 5000);
+					}
+<<<<<<< Updated upstream
+			setTimeout(getOrders, 6000);
 
 });
+=======
+				});
+>>>>>>> Stashed changes
 
 	});
 
+<<<<<<< Updated upstream
 	//console.log(party.p_Orders);
 
 
@@ -41,10 +55,32 @@ function getOrders()
 
 }
 
-function clearScreen_1()
+function clearScreen_1(e)
 {
+	var tableNumber = 1001;
+	$.get('http://localhost:443/api/parties', function(data){
+		$.each(data, function(key,party){
 
-	document.getElementById("1001").innerHTML = "";
+		if(party.p_Table == tableNumber)
+		{
+			var table_id = party._id;
+				$.ajax({
+					url:'http://localhost:443/api/parties/isComplete/'+table_id,
+					data: JSON.stringify({
+						"p_isComplete":true
+					}),
+					type:'PUT',
+					contentType:'application/json',
+					success: function(data){
+						//window.location.href='host.html';
+					},
+					error:function(xhr ,status, err){
+						console.log(err);
+					}
+				});
+		}
+		});
+	});
 
 }
 
@@ -139,5 +175,21 @@ function clearScreen_16()
 
 }
 
+=======
+
+	var i = 1;
+	$.each(active_orders.order, function(key,order)
+	{
+		let output = '<div class ="card-body1" id="body"';
+		output += '<p> ';
+		output += '</p>';
+		output += '</div>';
+		$('#card-body'+i).html(output);
+		i++
+	});
+
+}
+
+>>>>>>> Stashed changes
 
 
