@@ -115,6 +115,9 @@ function test(e){
 	console.log('test function');
 	var test=sessionStorage.getItem('orders');
 
+
+	var day=new Date();
+	console.log(day.getDay());
 	// this.tablenumber here
 	var tableNumber=1001;
 	$.get(url+'/api/parties',function(data){
@@ -222,7 +225,6 @@ function sendOrders(e){
 	//probably dynamically assign this number later
 	//add some more shit about active table conditions in here later
 	var tableNumber=1001;
-
 	//Get all parties
 	$.get(url+'/api/parties',function(data){
 		//console.log(data);
@@ -256,6 +258,8 @@ function sendOrders(e){
 
 				//log that shit to the database
 				console.log(orders);
+				orders=checkDate(orders);
+
 				//console.log(table_id);
 				console.log('putting');
 				$.ajax({
@@ -307,6 +311,10 @@ function getOrders(){
 
 }
 
+
+function checkDate(orders){
+
+}
 function totalOrderCount() {
 	totalOrder++;
 	console.log(totalOrder);
