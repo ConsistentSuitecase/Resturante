@@ -10,9 +10,10 @@ function getOrders()
 	$.get('http://localhost:443/api/parties',function(data){
 		$.each(data, function(key,party){
 			//console.log(party);
+			//$.each(party.p_Orders, function(key,party){
 							//console.log(orders.itemName);
 
-					let output = '<div class ="card" id="body">';
+					let output = '<div';
 
 				for(var i=0;i<party.p_Orders.length;i++)
 				{
@@ -23,11 +24,12 @@ function getOrders()
 					output += '</div>';
 					console.log(party.p_Table);
 					$('#'+party.p_Table).html(output);
-			
+			//});
 		
-
+			//setTimeout(getOrders, 100000);
 
 });
+
 	});
 
 	//console.log(party.p_Orders);
