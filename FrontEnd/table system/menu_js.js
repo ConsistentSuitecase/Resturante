@@ -422,7 +422,7 @@ function printOrder() {
 
 
 
-function AddOrderToSession( name,  desc,  price,  comment) {
+function AddOrderToSession( name,  desc,  price,  comment, type) {
 	console.log('kids chick');
 	var orders=JSON.parse(sessionStorage.getItem('orders'));
 	console.log(orders);
@@ -431,6 +431,7 @@ function AddOrderToSession( name,  desc,  price,  comment) {
 		itemDesc:desc,
 		itemPrice:price,
 		comments:comment,
+		itemType:type,
 		complete:false
 	};
 	console.log(temp);
@@ -440,9 +441,23 @@ function AddOrderToSession( name,  desc,  price,  comment) {
 }
 
 
-function myFunction() {
-    alert("Hello! I am an alert box!");
+function raffle(){
+var rand = getRandomInt(1,100);
+if(rand < 21)
+	console.log("you won");
+else
+	console.log("you lost");
+
+	console.log(rand);
 }
+
+
+
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 /*
    function kidsChick() {
     if(typeof(Storage) !== "undefined") {
