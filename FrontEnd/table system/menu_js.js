@@ -6,6 +6,11 @@ $(document).ready(function(){
 	$('#btn_buyShirt').click(buyShirt);
 	$('#btn_AddCoupon').click(activateCoupon);
 
+
+	$('#btn_Coke').click(addCoke);
+	$('#btn_Tea').click(addTea);
+	$('#btn_Water').click(addWater);
+
 	//$('#kidschicken').click(kidsChick);
 });
 var totalOrderCount = 0;
@@ -274,6 +279,19 @@ function totalOrderCount() {
 function addThaiLettuceWraps(){
 	AddOrderToSession('Thai Lettus Wraps', 'Wild Hog Wrapped in Bibb Lettuce, Pineapple & Cherry Tomato, Red Onion & Peanut Sauce, Puffed Rice', 12.00, '' );
 }
+
+function addCoke(){
+	AddOrderToSession('coke', 'like santa', 1.50, '' );
+}
+
+function addTea(){
+	AddOrderToSession('tea', 'SONG O THE SOUTH', 1.50, '' );
+}
+
+function addWater(){
+	AddOrderToSession('water', 'sweet and real', 11.50, '' );
+}
+
 
 function addOysters() {
 	AddOrderToSession('Oysters', 'Seasoned Oyster with Lemon', 12.00, '');
