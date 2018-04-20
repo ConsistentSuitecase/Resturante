@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Chart</title>
+	<title>Cart</title>
 	<script
 	src="https://code.jquery.com/jquery-3.2.1.js"
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
@@ -16,13 +16,11 @@
 </head>	
 <body>
 	<div class="orderBar">
+
+
 		<button class="tablinks" onclick="openOrder(event, 'cart')" id="drink">CART</button>
-<<<<<<< HEAD
-		<button class="tablinks" onclick="openOrder(event, 'sentOrders')">SENT ORDERS</button>
-=======
 		<button class="tablinks" onclick="openOrder(event, 'sentOrders')" id='btn_DisplayOrdered'>SENT ORDERS</button>
 		
->>>>>>> 0dd16d99b1d67c08eee88fe64075b877d8729409
 		<div id="cart" class="ordercontent">
 			<p>Order</p>
 
@@ -33,19 +31,18 @@
 		</div>
 
 	</div>
-	
-	
-	<div class="add-placeOrder">
-		<button class="placebutton">Add More</button></a>
-		<button class="placebutton" id="btn_placeOrder">Place Order</button></a>
-	</div>
 
-	
 	<div class="bottomNavBar">
 		<ul class="links">
 			<li><a href="main.html">EXIT</a></li>
-			<li class="tnum">Table 16</li>
+			<div id='table_name'></div>
 		</ul>
+	</div>
+		
+	<div class="add-placeOrder">
+				
+		<button class="placebutton">Add More</button></a>
+		<button class="placebutton" id="btn_placeOrder">Place Order</button></a>
 	</div>
 	
 	<script src="tabs.js"></script>

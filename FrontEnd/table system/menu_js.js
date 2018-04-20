@@ -3,14 +3,12 @@ $(document).ready(function(){
 	displayCart();
 	$('#btn_placeOrder').click(sendOrders);
 	$('#btn_DisplayOrdered').click(displayOrderedFood);
-
+	$('#btn_buyShirt').click(buyShirt);
 	//$('#kidschicken').click(kidsChick);
 });
 var totalOrderCount = 0;
 var totalOrder = 0;
 
-<<<<<<< HEAD
-=======
 //My Edit
 function printlist()
 {
@@ -35,10 +33,29 @@ function printlist()
 	});
 }
 
->>>>>>> d840214228e2cb2faa3fdf6992fb83c7bf24b32e
+
+function getActiveTableID(tableNumber){
+	console.log(tableNumber);
+	
+
+}
 function test(e){
 	console.log('test function');
 	var test=sessionStorage.getItem('orders');
+
+	// this.tablenumber here
+	var tableNumber=1001;
+	$.get(url+'/api/parties',function(data){
+		$.each(data, function(key,party){
+			if(party.p_Table==tableNumber){
+				console.log(party);
+				$('#table_name').html('<h3 class="tableName">'+party.p_Name+'</h3>');
+				
+			}
+		});
+	});
+
+	
 	if(test==null)
 	{
 		console.log('starting order obj');
@@ -47,6 +64,7 @@ function test(e){
 			sessionStorage.setItem('orders',JSON.stringify(orders));
 		}
 	}
+	
 
 
 
@@ -56,13 +74,16 @@ function test(e){
 
 	function displayCart(e){
 		var cart_orders=JSON.parse(sessionStorage.getItem('orders'));
+		var totalCost=0;
 		let output='<ul>'
 		for(var i=0;i<cart_orders.orders.length;i++)
 		{
 			console.log(i);
 			console.log(cart_orders.orders[i]);
-			output+='<li>'+cart_orders.orders[i].itemName+'</li>';
+			output+='<li>'+cart_orders.orders[i].itemName+'   $'+cart_orders.orders[i].itemPrice+'</li>';
+			totalCost+=cart_orders.orders[i].itemPrice;
 		}
+		output+='<li> Total Price of cart: '+totalCost+'</li>';
 		output+='</ul>'
 		$('#cart').html(output);
 	}
@@ -75,13 +96,17 @@ function test(e){
 
 				if(party.p_Table==tableNumber){
 				//redner the food
+				
+				var totalCost=0;
 				let output='<ul>'
+
 				for(var i=0;i<party.p_Orders.length;i++)
 				{
 					console.log(i);
-					console.log(party.p_Orders[i]);
-					output+='<li>'+party.p_Orders[i].itemName+'</li>';
+					output+='<li>'+party.p_Orders[i].itemName+'   $'+party.p_Orders[i].itemPrice+'</li>';
+					totalCost+=party.p_Orders[i].itemPrice;
 				}
+				output+='<li> Total Price of all ordered items: '+totalCost+'</li>';
 				output+='</ul>'
 				$('#sentOrders').html(output);
 				return;
@@ -91,6 +116,11 @@ function test(e){
 	}
 
 
+	function buyShirt(e){
+		alert('buying shirt');
+		AddOrderToSession('T-Shirt', 'beautiful, Professional shirt', .25, '' );
+
+	}
 //get active table
 function sendOrders(e){
 	//probably dynamically assign this number later

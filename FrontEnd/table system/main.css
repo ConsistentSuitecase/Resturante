@@ -34,14 +34,14 @@ li a {
     text-decoration: none;	
 }
 
-.tnum{
+.tableName{
 	float: right;
 	display: block;
     color: white;
-    text-align: center;
+    
 	padding: 14px 14px;
     text-decoration: none;
-	width: 10%;
+	width: 15%;
 	font-size: 14px;
 	
 }
@@ -122,6 +122,18 @@ background-position: center;
 	height: 100%;
 	padding-top: 60px;
 }
+
+
+.shirt-list{
+	position: fixed;
+	align-content: center;
+	right: 0;
+	margin: 0;
+	width: 60%;
+	height: 100%;
+	padding-top: 60px;
+}
+
 .teaphoto{
 	position: fixed;
 	padding: 0;
@@ -131,11 +143,6 @@ background-position: center;
 	height: 100%;
 	
 }
-
-
-	
-	
-	
 
 h3{
 	color: black;
@@ -206,11 +213,12 @@ p{
     border: none;
     outline: none;
     cursor: pointer;
+    align-content: center;
     padding: 14px 16px;
     transition: 0.3s;
 	color:white;
 	text-size: 14px;
-	width: 15%;
+	width: 11%;
 }
 
 .tabbar a{
@@ -435,6 +443,14 @@ p{
 	position: fixed;
 	right: 0;
 }
+
+.couponForm{
+	margin: 175px;
+	position: fixed;
+	right: 0;
+	float:left;
+}
+
 .split{
 	background-color: white;
 	width: 45%;

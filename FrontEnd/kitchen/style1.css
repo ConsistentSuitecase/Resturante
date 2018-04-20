@@ -1,19 +1,59 @@
-div.card{
+body{
+	background: url("chef_background.jpg");
+}
 
+h1#head1{
+	color:brown;
 }
 
 h4#first{
-	background-color:#ff0000;
+	background-color:#FFEBCD;
 }
 
-h4#second{
-	background-color:#E9967A;
+h4#two{
+	background-color:#FFEBCD;
 }
 
-h4#third{
-	background-color:#B8860B;
+h4#three{
+	background-color:#FFEBCD;
 }
 
-h4#fourth{
-	background-color:#00FFFF;
+h4#four{
+	background-color:#FFEBCD;
+}
+h4#five{
+	background-color:#FFEBCD;
+}
+h4#six{
+	background-color:#FFEBCD;
+}
+h4#seven{
+	background-color:#FFEBCD;
+}
+h4#eight{
+	background-color:#FFEBCD;
+}
+h4#nine{
+	background-color:#FFEBCD;
+}
+h4#ten{
+	background-color:#FFEBCD;
+}
+h4#eleven{
+	background-color:#FFEBCD;
+}
+h4#twelve{
+	background-color:#FFEBCD;
+}
+h4#thirteen{
+	background-color:#FFEBCD;
+}
+h4#fourteen{
+	background-color:#FFEBCD;
+}
+h4#fifthteen{
+	background-color:#FFEBCD;
+}
+h4#sixteen{
+	background-color:#FFEBCD;
 }

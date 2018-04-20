@@ -2,6 +2,10 @@
 <html>
 	<head>
 		<title>Main</title>
+			<script
+	src="https://code.jquery.com/jquery-3.2.1.js"
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	crossorigin="anonymous"></script>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="main.css">
 		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
@@ -15,9 +19,10 @@
 			<ul class="links">
 				<li><a href="menu.html">DRINKS</a></li>
 				<li><a href="menu.html">FOOD</a></li>
-				<li><a href="games.html">GAMES</a></li>
+				<li><a href="games.html">TIC-TAC-TOE</a></li>
+				<li><a href="memory.html">MEMEORY</a></li>
 				<li><a href="pay.html">PAY</a></li>
-				<li class="tnum">Table 16</li>
+				<div id='table_name'></div>
 			</ul>
 		</div>
 
@@ -40,7 +45,6 @@
 
 					<div class="carousel-item active" style="background-image: url(pictures/lattucewrapes.png)">
 						<div class="carousel-caption d-none d-md-block">
-							<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
 								<h5 class="price">$12.00</h5>
 								<h3 class="menuitem">Thai Lettuce Wraps</h3>
 								<p class="itemdescription">Wild Hog Wrapped in Bibb Lettuce, Pineapple & Cherry Tomato, Red Onion & Peanut Sauce, Puffed Rice</p>
@@ -49,7 +53,6 @@
 
 					<div class="carousel-item" style="background-image: url(pictures/sweettea.jpg)">
 						<div class="carousel-caption d-none d-md-block">
-							<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
 								<h5 class="price">$1.50</h5>
 								<h3 class="menuitem">House brewed sweet tea</h3>
 							<p>Refresing sweet tea brewed in house daily</p>
@@ -62,7 +65,6 @@
 					</div>
 					<div class="carousel-item" style="background-image: url(pictures/salmon.png)">
 						<div class="carousel-caption d-none d-md-block">
-							<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
 							<h5 class="price">$28.00</h5>
 							<h3 class="menuitem">Bourbon Salmon</h3>
 							<p>Atlantic Salmon Filet Char Grilled, Bourbon Barbeque Sauce, Asparagus, Quinoa Rice</p>
@@ -71,7 +73,6 @@
 
 					<div class="carousel-item" style="background-image: url(pictures/chocolatecake.jpg)">
 						<div class="carousel-caption d-none d-md-block">
-							<button class="orderbutton"><i class="fas fa-cart-plus"></i> Add to Order</button>
 							<h5 class="price">$8.00</h5>
 							<h3 class="menuitem">Chocolate Mouse Cake</h3>
 							<p>This is a description for the third slide.</p>
