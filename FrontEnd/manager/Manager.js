@@ -5,24 +5,25 @@ function check(){
 		console.log(data);
 		$.each(data, function(key,party)
 		{
-			var j= party.p_Table-1000;
-			var table=0;
+			var x;
+			var y;
 
-			for(j = 1001; j < 1016; j++)
+			for(x = 1001; x < 1016; x++)
 				{
-					table = j-1000;
-					if(j == party.p_Table)
+					y = x-1000;
+					if(x == party.p_Table)
 					{
-						if(party.p_hasOrdered)
-							document.getElementById("Table"+table).style.backgroundColor = "red";			
+						if(party.p_needHelp)
+							document.getElementById("Table"+y).style.backgroundColor = "red";			
 						else if(party.p_NeedsRefill)
-							document.getElementById("Table"+table).style.backgroundColor = "orange";
+							document.getElementById("Table"+y).style.backgroundColor = "orange";
 						else if(party.p_HasPaid)
-							document.getElementById("Table"+table).style.backgroundColor = "white";
+							document.getElementById("Table"+y).style.backgroundColor = "white";
 						else if(party.p_isSeated)
-							document.getElementById("Table"+table).style.backgroundColor = "green";	
+							document.getElementById("Table"+y).style.backgroundColor = "green";	
 					}
 				}
+
 		});
 	}); 
 	setTimeout(check,5000);
