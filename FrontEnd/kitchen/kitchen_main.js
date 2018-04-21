@@ -3,64 +3,72 @@ $(document).ready(function(){
 
 	getOrders();
 });
-
+var url='http://localhost:444';
 function getOrders()
 {
 	var active_orders=[];
-	$.get('http://localhost:443/api/parties',function(data){
+	$.get(url+ '/api/parties',function(data){
 		$.each(data, function(key,party){
 
+				console.log(party);
+			if(party.p_isComplete == false)
+			{
+				let output = '<div';
 
-				if(party.p_isComplete == false)
+				for(var i=0;i<party.p_Orders.length;i++)
 				{
-					let output = '<div';
-
-					for(var i=0;i<party.p_Orders.length;i++)
-					{
-						console.log(i);
-						output+='<p> '+party.p_Orders[i].itemName+' </p>';
-					}
-
-					output += '</div>';
-					console.log(party.p_Table);
-					$('#'+party.p_Table).html(output);
-			//});
+					console.log(i);
+					output+='<p>'+party.p_Orders[i].itemName+ '</p>';
 				}
 
-});
+				output += '</div>';
+				console.log(party.p_Table);
+				$('#'+party.p_Table).html(output);
+			}
+
+		});
 
 	});
 }
 
+function markTableAsComplete(tableNumber){
 
+	console.log('stepped in');
 
-function clearScreen_1()
-{
-
-	var tableNumber = 1001;
-
-	$.get('http://localhost:443/api/parties', function(data){
+	$.get(url +'/api/parties', function(data){
 		$.each(data, function(key,party){
 
-			var table_id = party._id;
-			$.ajax({
-				url:'http://localhost:443/api/parties/updateisComplete/'+table_id,
-				data: JSON.stringify({
-					"p_hasOrdered":true
-				}),
-				type:'PUT',
-				contentType:'application/json',
-				success: function(data){
+			if(party.p_Table==tableNumber && party.p_isComplete==false)
+			{
+				var table_id=party._id;
+				console.log(table_id);
+				$.ajax({
+					url:url+'/api/parties/updateIsComplete/'+table_id,
+					data: JSON.stringify({
+						"p_isComplete":true
+					}),
+					type:'PUT',
+					contentType:'application/json',
+					success: function(data){
 					//window.location.href='host.html';
 				},
 				error:function(xhr ,status, err){
 					console.log(err);
 				}
 			});
+			}
 		});
 	});
 
-	window.location.reload();
+
+
+}
+
+function clearScreen_1()
+{
+
+	var tableNumber = 1001;
+
 
 }
 
@@ -155,8 +163,7 @@ function clearScreen_16()
 
 }
 
-=======
-
+/*
 	var i = 1;
 	$.each(active_orders.order, function(key,order)
 	{
@@ -169,7 +176,6 @@ function clearScreen_16()
 	});
 
 }
-
->>>>>>> Stashed changes
+*/
 
 

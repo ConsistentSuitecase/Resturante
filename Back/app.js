@@ -4,7 +4,7 @@ var mongojs = require("mongojs");
 var db= mongojs('parties', ['parties']);
 
 
-port = process.env.PORT || 443;
+port = process.env.PORT || 444;
 
 
 
@@ -33,7 +33,7 @@ app.get('/api/parties', function(req, res, next){
 		{
 			res.send(err);
 		}
-		console.log(docs);
+		//console.log(docs);
 		res.json(docs);
 
 	});
@@ -301,6 +301,8 @@ app.put('/api/parties/updateHasOrdered/:id', function(req, res, next){
 
 app.put('/api/parties/updateIsComplete/:id', function(req, res, next){
 	//res.send('Update job '+req.params.id);
+	console.log('noted');
+
 	db.parties.findAndModify({query: {_id: mongojs.ObjectId(req.params.id)},update:{
 		$set:{
 
