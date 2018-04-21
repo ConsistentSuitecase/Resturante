@@ -9,61 +9,58 @@ function getOrders()
 	var active_orders=[];
 	$.get('http://localhost:443/api/parties',function(data){
 		$.each(data, function(key,party){
-			//console.log(party);
-			//$.each(party.p_Orders, function(key,party){
-							//console.log(orders.itemName);
-					console.log(party.p_isComplete);
 
-					if(party.p_isComplete == false)
+
+				if(party.p_isComplete == false)
+				{
+					let output = '<div';
+
+					for(var i=0;i<party.p_Orders.length;i++)
 					{
-						let output = '<div';
-
-						for(var i=0;i<party.p_Orders.length;i++)
-						{
-							console.log(i);
-							output+='<p> '+party.p_Orders[i].itemName+' </p>';
-						}
-
-						output += '</div>';
-						console.log(party.p_Table);
-						$('#'+party.p_Table).html(output);
-						
+						console.log(i);
+						output+='<p> '+party.p_Orders[i].itemName+' </p>';
 					}
-			setTimeout(getOrders, 6000);
 
-		});
+					output += '</div>';
+					console.log(party.p_Table);
+					$('#'+party.p_Table).html(output);
+			//});
+				}
+
+});
 
 	});
 }
 
 
 
-function clearScreen_1(e)
+function clearScreen_1()
 {
+
 	var tableNumber = 1001;
+
 	$.get('http://localhost:443/api/parties', function(data){
 		$.each(data, function(key,party){
 
-		if(party.p_Table == tableNumber)
-		{
 			var table_id = party._id;
-				$.ajax({
-					url:'http://localhost:443/api/parties/isComplete/'+table_id,
-					data: JSON.stringify({
-						"p_isComplete":true
-					}),
-					type:'PUT',
-					contentType:'application/json',
-					success: function(data){
-						//window.location.href='host.html';
-					},
-					error:function(xhr ,status, err){
-						console.log(err);
-					}
-				});
-		}
+			$.ajax({
+				url:'http://localhost:443/api/parties/updateisComplete/'+table_id,
+				data: JSON.stringify({
+					"p_hasOrdered":true
+				}),
+				type:'PUT',
+				contentType:'application/json',
+				success: function(data){
+					//window.location.href='host.html';
+				},
+				error:function(xhr ,status, err){
+					console.log(err);
+				}
+			});
 		});
 	});
+
+	window.location.reload();
 
 }
 
