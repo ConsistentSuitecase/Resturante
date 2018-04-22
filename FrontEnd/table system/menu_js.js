@@ -11,7 +11,8 @@ $(document).ready(function(){
 	$('#btn_Coke').click(addCoke);
 	$('#btn_Tea').click(addTea);
 	$('#btn_Water').click(addWater);
-
+	$('#SplitCount').on('change', splitCheck);
+	$('#btn_GenRecipt').on('click',genRecipt);
 	//$('#kidschicken').click(kidsChick);
 });
 var totalOrderCount = 0;
@@ -202,9 +203,92 @@ function test(e){
 	
 
 
+function splitCheck(){
+		console.log('splitting');
+		var count=$('#SplitCount').val();
+		console.log(count);
+		var tableNumber=1001;
+		$.get(url+'/api/parties',function(data){
+		$.each(data, function(key,party){
+
+			if(party.p_Table==tableNumber){
+				//redner the food
+				var totalCost=0;
+				let output='<ul>';
+
+				$.each(party.p_Orders,function(key,order){					
+					output+='<li>'+order.itemName+'   $'+order.itemPrice+'</li>';
+					totalCost+=order.itemPrice;
+				});
+				totalCost=totalCost/count;
+				output+='<li> Total Owed Per Payment: '+totalCost+'</li>';
+				output+='</ul>';
+				output+='<button  onclick="openPay(event, \'recipt\')"> Pay </button>';
+				$('#checks').html(output);
+				console.log(output);
+				sessionStorage.setItem('splitCount',count);
+				sessionStorage.setItem('price',totalCost);
+			}
+			
+		});
+
+	});
+
+}
+
+function genRecipt(){
+	console.log('test');
+	var tableNumber=1001;
+		$.get(url+'/api/parties',function(data){
+		$.each(data, function(key,party){
+
+			if(party.p_Table==tableNumber){
+				//redner the food
+				var splitCount=sessionStorage.getItem('splitCount');
+				var totalCost=sessionStorage.getItem('price');
+				console.log(totalCost);
+				console.log(splitCount);
+
+				if(totalCost==null)
+				{
+					totalCost=0;
+				}
+
+				let output='<ul>';
+
+				$.each(party.p_Orders,function(key,order){					
+					output+='<li>'+order.itemName+'   $'+order.itemPrice+'</li>';
+					totalCost+=order.itemPrice;
+				});
+				output+='<li> Total Owed: '+totalCost+'</li>';
+				output+='</ul>';
+				
+				var splitOut='';
+				if(splitCount!=null)
+				{
+
+					var i=0;
+					while(i<splitCount)
+					{
+						splitOut+=output;
+						i++;
+					}
+					$('#recipts').html(splitOut);
+					return;
 
 
+				}
 
+
+				$('#recipts').html(output);
+
+				return;
+			}
+			
+		});
+
+	});
+}
 
 	function displayCart(e){
 		var cart_orders=JSON.parse(sessionStorage.getItem('orders'));
