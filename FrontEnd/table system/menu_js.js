@@ -499,7 +499,7 @@ function addOysters() {
 }
 
 function addSalmon(){
-	AddOrderToSession('Salmon', 'Raw Salmon with Lemon and Slices of Onion', '$12.00' , 'Appatizers');
+	AddOrderToSession('Salmon', 'Raw Salmon with Lemon and Slices of Onion', 12.00 , 'Appatizers');
 }
 
 function addFriedOctopus() {
