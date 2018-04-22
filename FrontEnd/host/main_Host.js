@@ -89,11 +89,11 @@ function addParty()
 		success: function(data)
 		{							//if-else statement if we need to check if all table's occupied, or search for empty tables
 			tnum = p_Table-1000;	//tableid(ex: 1001)- 1000 = table number for customer
-	        document.getElementById("ticket").innerHTML="Please take your ticket<br>Your table will be Table #"+tnum;
+	        document.getElementById("ticket").innerHTML="Please take your ticket. Your table will be Table #"+tnum+".<br>Waitstaff #"+p_WaiterID +" will be right with you";
 	        setTimeout(function()
 	        { 
 	        	window.location.href='host.html';//refreshes page after 5000ms
-	        }, 5000);
+	        }, 7000);
 		},
 		error:function(xhr ,status, err){
 			console.log(err);
