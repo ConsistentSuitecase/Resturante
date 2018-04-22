@@ -17,7 +17,7 @@ $(document).ready(function(){
 });
 var totalOrderCount = 0;
 var totalOrder = 0;
-var url="http://localhost:444";
+var url="http://localhost:443";
 function refill(){
 	var tableNumber = 1001;
 	$.get(url+'/api/parties',function(data){
