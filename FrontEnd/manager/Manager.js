@@ -19,8 +19,6 @@ function check(){
 							document.getElementById("Table"+y).style.backgroundColor = "orange";
 						else if(party.p_isSeated)
 							document.getElementById("Table"+y).style.backgroundColor = "green";	
-						else if(party.p_HasPaid)
-							document.getElementById("Table"+y).style.backgroundColor = "white";		
 						else
 							document.getElementById("Table"+y).style.backgroundColor = "white";													
 					}
@@ -243,7 +241,7 @@ function displayOrderedFood()
 
 				+coke+"<br>"
 				+tea+"<br>"
-				+water+"<br><br><p align='right'>Total:</p>";
+				+water+"<br>";
 
 				document.getElementById("moneh").innerHTML = 
 				"Food Total<br>$"
@@ -273,7 +271,7 @@ function displayOrderedFood()
 
 				+cokeT.toFixed(2)+"<br>$"
 				+teaT.toFixed(2)+"<br>$"
-				+waterT.toFixed(2)+"<br><br>$"+totalCost.toFixed(2)+"<br>";
+				+waterT.toFixed(2)+"<br><br>Weekly Total: $"+totalCost.toFixed(2)+"<br>";
 				return;
 			}
 		});
@@ -286,8 +284,8 @@ var d = new Date();
 var minute=d.getMinutes();
 var hour=d.getHours();
 var month=d.getMonth()+1;
-var reset = "61159PM";
-var cmp;
+var reset = "01159PM";
+var cmp;   //MH M A/PM
 var apm = "AM";
 
 if(hour > 12)
