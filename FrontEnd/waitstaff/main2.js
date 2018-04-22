@@ -40,6 +40,10 @@ function getName1(){
 			console.log(output);
 			console.log(output2);
 			}
+ 			if(party.p_isComplete)
+ 				document.getElementById("ordering").innerHTML = "Done"
+ 			else if(party.p_isComplete == false && party.p_hasOrdered)
+ 				document.getElementById("ordering").innerHTML = "Awaiting"			
 			//output += party.p_Name + '<span class = "party_name"></span>';
 			//output += '<div class="pull-right"> <a class="btn btn-success btn-view-task" data-task-name="'+print.p_Name+'" data-task-id="'+print._id+'">View</a> <a class="btn btn-primary btn-edit-task" data-task-name="'+print.p_Name+'" data-task-id="'+print._id+'">Edit</a> <a class="btn btn-danger btn-delete-task" data-task-id="'+print._id+'">Delete</a></div>';
 		});
@@ -55,6 +59,10 @@ function getName2(){
 		var i=0;
 		$.each(data, function(key,party){
 			//i++;
+ 			if(party.p_isComplete)
+ 				document.getElementById("ordering").innerHTML = "Done"
+ 			else if(party.p_isComplete == false && party.p_hasOrdered)
+ 				document.getElementById("ordering").innerHTML = "Awaiting"			
 			if(party.p_WaiterID == 1001){
 			i++;
 			let output2= '<p  class="card-text"> people';
@@ -72,9 +80,13 @@ function getName2(){
 			console.log(output);
 			console.log(output2);
 			}
+ 			if(party.p_isComplete)
+ 				document.getElementById("ordering").innerHTML = "Done"
+ 			else if(party.p_isComplete == false && party.p_hasOrdered)
+ 				document.getElementById("ordering").innerHTML = "Awaiting"			
 			//output += party.p_Name + '<span class = "party_name"></span>';
 			//output += '<div class="pull-right"> <a class="btn btn-success btn-view-task" data-task-name="'+print.p_Name+'" data-task-id="'+print._id+'">View</a> <a class="btn btn-primary btn-edit-task" data-task-name="'+print.p_Name+'" data-task-id="'+print._id+'">Edit</a> <a class="btn btn-danger btn-delete-task" data-task-id="'+print._id+'">Delete</a></div>';
-		});
+ 		});
 
 	//}
 	}); 
@@ -104,6 +116,10 @@ function getName3(){
 			console.log(output);
 			console.log(output2);
 			}
+ 			if(party.p_isComplete)
+ 				document.getElementById("ordering").innerHTML = "Done"
+ 			else if(party.p_isComplete == false && party.p_hasOrdered)
+ 				document.getElementById("ordering").innerHTML = "Awaiting"			
 			//output += party.p_Name + '<span class = "party_name"></span>';
 			//output += '<div class="pull-right"> <a class="btn btn-success btn-view-task" data-task-name="'+print.p_Name+'" data-task-id="'+print._id+'">View</a> <a class="btn btn-primary btn-edit-task" data-task-name="'+print.p_Name+'" data-task-id="'+print._id+'">Edit</a> <a class="btn btn-danger btn-delete-task" data-task-id="'+print._id+'">Delete</a></div>';
 		});
@@ -136,6 +152,10 @@ function getName4(){
 			console.log(output);
 			console.log(output2);
 			}
+ 			if(party.p_isComplete)
+ 				document.getElementById("ordering").innerHTML = "Done"
+ 			else if(party.p_isComplete == false && party.p_hasOrdered)
+ 				document.getElementById("ordering").innerHTML = "Awaiting"			
 			//output += party.p_Name + '<span class = "party_name"></span>';
 			//output += '<div class="pull-right"> <a class="btn btn-success btn-view-task" data-task-name="'+print.p_Name+'" data-task-id="'+print._id+'">View</a> <a class="btn btn-primary btn-edit-task" data-task-name="'+print.p_Name+'" data-task-id="'+print._id+'">Edit</a> <a class="btn btn-danger btn-delete-task" data-task-id="'+print._id+'">Delete</a></div>';
 		});

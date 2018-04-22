@@ -58,6 +58,7 @@ function markTableAsComplete(tableNumber){
 			});
 			}
 		});
+	  	window.location.href='kitchen.html';	
 	});
 
 
